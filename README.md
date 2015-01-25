@@ -1,2 +1,2 @@
 # lesEssence
-Predict your fuel economy
+Predict your fuel economy.
