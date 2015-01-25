@@ -1,7 +1,11 @@
 {
-  "name": "lesessence",
+  "name": "lesEssence",
   "version": "1.0.0",
-  "description": "lesEssence: An Ionic project",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rbose85/lesEssence.git"
+  },
+  "description": "lesEssence: Predict your fuel economy.",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^0.7.1",
