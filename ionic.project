@@ -1,5 +1,9 @@
 {
   "name": "lesEssence",
   "app_id": "co.uk.daringdevelopers.lesessence",
-  "package_name": "co.uk.daringdevelopers.lesessence"
+  "package_name": "co.uk.daringdevelopers.lesessence",
+  "gulpStartupTasks": [
+    "default",
+    "watch"
+  ]
 }
