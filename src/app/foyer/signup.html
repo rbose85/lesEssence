@@ -1,0 +1,19 @@
+<ion-view view-title="New Account">
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon" ng-click="vm.submit()" ng-disabled="vm.form.$invalid">Create</button>
+    </ion-nav-buttons>
+    <ion-content scroll="false">
+        <form class="list list-inset" name="vm.form" role="form" ng-submit="vm.submit()" novalidate>
+            <label class="item item-input">
+                <input type="text" name="name" ng-model="name" placeholder="Full Name" required/>
+            </label>
+            <label class="item item-input">
+                <input type="email" name="email" ng-model="email" placeholder="Email" required/>
+            </label>
+            <label class="item item-input">
+                <input type="password" name="password" ng-model="password" placeholder="Password" required/>
+            </label>
+            <input type="submit" class="button button-block button-hidden"/>
+        </form>
+    </ion-content>
+</ion-view>

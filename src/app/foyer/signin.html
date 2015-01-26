@@ -1,0 +1,19 @@
+<ion-view view-title="lesEssence">
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon" ng-click="vm.submit()" ng-disabled="vm.form.$invalid">Sign In</button>
+    </ion-nav-buttons>
+    <ion-content scroll="false">
+        <form class="list list-inset" name="vm.form" role="form" ng-submit="vm.submit()" novalidate>
+            <label class="item item-input">
+                <input type="email" name="email" ng-model="email" placeholder="Email" required/>
+            </label>
+            <label class="item item-input">
+                <input type="password" name="password" ng-model="password" placeholder="Password" required/>
+            </label>
+            <input type="submit" class="button button-block button-hidden"/>
+        </form>
+        <p class="padding text-center">
+            <a ui-sref="^.passwd">Forgot Password?</a>
+        </p>
+    </ion-content>
+</ion-view>

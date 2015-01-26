@@ -1,0 +1,16 @@
+<ion-view view-title="Forgot Password">
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon" ng-click="vm.submit()" ng-disabled="vm.form.$invalid">Send</button>
+    </ion-nav-buttons>
+    <ion-content scroll="false">
+        <form class="list list-inset" name="vm.form" role="form" ng-submit="vm.submit()" novalidate>
+            <label class="item item-input">
+                <input type="email" name="email" ng-model="email" placeholder="Email" required/>
+            </label>
+            <input type="submit" class="button button-block button-hidden"/>
+        </form>
+        <p class="padding text-center form-help-text">
+            We will send you an email with further instructions to rest yours password.
+        </p>
+    </ion-content>
+</ion-view>
