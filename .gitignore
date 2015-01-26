@@ -6,3 +6,10 @@ bower_components/
 platforms/
 plugins/
 node_modules/
+
+# auto-generated www folders
+www/css/
+www/fonts/
+www/img/
+www/js/
+www/lib/
