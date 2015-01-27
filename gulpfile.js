@@ -8,6 +8,7 @@
     var flatten = require('gulp-flatten');
     var jshint = require('gulp-jshint');
     var less = require('gulp-less');
+    var sort = require('gulp-angular-filesort');
     var sourcemaps = require('gulp-sourcemaps');
     var uglify = require('gulp-uglify');
     var uglifycss = require('gulp-uglifycss');
@@ -64,6 +65,7 @@
         return gulp.src(['src/app/app.js', 'src/app/**/*.js'])
             .pipe(jshint())
             .pipe(jshint.reporter('jshint-stylish'))
+            .pipe(sort())
             .pipe(sourcemaps.init())
             .pipe(concat('app.js'))
             .pipe(annotate())
