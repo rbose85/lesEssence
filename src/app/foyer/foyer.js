@@ -2,12 +2,13 @@
     'use strict';
 
     angular.module('app.foyer', [])
-        .config(['$stateProvider', Router])
-        .controller('Passwd', Passwd)
-        .controller('SignIn', SignIn)
-        .controller('SignUp', SignUp);
+        .config(FoyerRouter)
+        .controller('Passwd', PasswordController)
+        .controller('SignIn', SignInController)
+        .controller('SignUp', SignUpController);
 
-    function Router($stateProvider) {
+    /* @ngInject */
+    function FoyerRouter($stateProvider) {
         $stateProvider
             .state('foyer', {
                 url: '/foyer',
@@ -50,10 +51,13 @@
             });
     }
 
-    function Passwd() {}
+    /* @ngInject */
+    function PasswordController() {}
 
-    function SignIn() {}
+    /* @ngInject */
+    function SignInController() {}
 
-    function SignUp() {}
+    /* @ngInject */
+    function SignUpController() {}
 
 })();
