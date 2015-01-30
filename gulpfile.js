@@ -19,11 +19,12 @@
      *  Group task(s) to output folder: www/css
      * */
     gulp.task('css-app', function () {
-        return gulp.src('src/less/config.less')
+        return gulp.src(['src/app/**/*.less'])
             .pipe(sourcemaps.init())
+            .pipe(concat('app.css'))
             .pipe(less())
             .pipe(uglifycss())
-            .pipe(sourcemaps.write({sourceRoot: '/src/less'}))
+            .pipe(sourcemaps.write({sourceRoot: '/src/app'}))
             .pipe(gulp.dest('www/css/'));
     });
 
@@ -153,7 +154,7 @@
 
 
     gulp.task('watch', function () {
-        gulp.watch('src/less/**/*.less', ['css-app']);
+        gulp.watch('src/app/**/*.less', ['css-app']);
         gulp.watch('src/app/**/*.js', ['js-app']);
         gulp.watch('src/app/**/*.html', ['templates']);
     });
