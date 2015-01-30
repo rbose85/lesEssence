@@ -14,10 +14,6 @@
         $stateProvider
             .state('loading', {
                 url: '',
-                abstract: true
-            })
-            .state('loading.data', {
-                url: '',
                 resolve: {
                     ready: function ($ionicPlatform) {
                         return $ionicPlatform.ready();
