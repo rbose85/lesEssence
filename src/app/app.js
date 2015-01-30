@@ -18,7 +18,7 @@
 
     /* @ngInject */
     function AppRouter($urlRouterProvider) {
-        $urlRouterProvider.otherwise('/load');
+        $urlRouterProvider.otherwise('/');
     }
 
     /* @ngInject */
