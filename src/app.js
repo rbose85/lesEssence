@@ -8,6 +8,7 @@
 
         'app.common',
         'app.cordova',
+        'app.firebase',
         'app.foyer',
         'app.loading'
     ])

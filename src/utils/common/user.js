@@ -5,45 +5,23 @@
         .factory('user', UserService);
 
     /* @ngInject */
-    function UserService($q, $firebase, auth, FBURL) {
-
+    function UserService($q, $firebase, FBURL, account, session) {
         var getSync = function (userId) {
             var url = FBURL + 'users/' + userId + '/';
             var ref = new Firebase(url);
             return $firebase(ref);
         };
 
-        var authenticateUser = function (email, password) {
-            var deferred = $q.defer();
-
-            auth.newSession(email, password)
-                .then(function (session) {
-                    return getSync().$update({
-                        auth: {token: session.token}
-                    });
-                })
-                .then(function (session) {
-                    deferred.resolve(session);
-                })
-                .catch(function (error) {
-                    deferred.reject(error);
-                });
-
-            return deferred.promise;
-        };
-
         var createUser = function (name, email, password) {
             var deferred = $q.defer();
 
-            auth.createAccount(name, email, password)
+            account.create(name, email, password)
                 .then(function () {
-                    return auth.newSession(email, password);
+                    return session.create(email, password);
                 })
-                .then(function (user) {
-                    return getSync(user.id).$set({
-                        auth: {token: user.token},
-                        details: {name: name}
-                    });
+                .then(function (sessionData) {
+                    var userId = sessionData.id;
+                    return getSync(userId).$set({details: {name: name}});
                 })
                 .catch(function (error) {
                     deferred.reject(error);
@@ -54,36 +32,30 @@
 
         return {
             create: createUser,
-            signIn: authenticateUser,
-            signOut: function () {
-                var deferred = $q.defer();
 
-                auth.endSession()
-                    .then(function () {
-                        deferred.resolve();
-                    })
-                    .catch(function (error) {
-                        deferred.reject(error);
-                    });
-
-                return deferred.promise;
-            },
-            updatePassword: function (email, oldPasswd, newPasswd) {
-                return auth.updateAccountPassword(email, oldPasswd, newPasswd);
+            updatePassword: function (email, oldPassword, newPassword) {
+                return account.password.update(email, oldPassword, newPassword);
             },
             recoverPassword: function (email) {
-                return auth.recoverAccountPassword(email);
+                return account.password.recover(email);
             },
 
-            isSignedIn: function () {
-                return auth.hasSession();
+            signIn: function (email, password) {
+                return session.create(email, password);
             },
+            isSignedIn: function () {
+                return session.isActive();
+            },
+            signOut: function () {
+                return session.end();
+            },
+
             getId: function () {
-                var session = auth.getSession();
+                var session = session.getActive();
                 return session && session.id;
             },
             getToken: function () {
-                var session = auth.getSession();
+                var session = session.getActive();
                 return session && session.token;
             }
         };
