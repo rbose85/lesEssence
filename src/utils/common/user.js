@@ -24,6 +24,7 @@
                     return getSync(userId).$set({details: {name: name}});
                 })
                 .catch(function (error) {
+                    console.error(angular.toJson(error, true));
                     deferred.reject(error);
                 });
 
