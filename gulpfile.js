@@ -19,12 +19,12 @@
      *  Group task(s) to output folder: www/css
      * */
     gulp.task('css-app', function () {
-        return gulp.src(['src/app/**/*.less'])
+        return gulp.src(['src/**/*.less'])
             .pipe(sourcemaps.init())
             .pipe(concat('app.css'))
             .pipe(less())
             .pipe(uglifycss())
-            .pipe(sourcemaps.write({sourceRoot: '/src/app'}))
+            .pipe(sourcemaps.write({sourceRoot: '/src'}))
             .pipe(gulp.dest('www/css/'));
     });
 
@@ -63,7 +63,7 @@
      *  Group task(s) to output folder: www/js
      * */
     gulp.task('js-app', function () {
-        return gulp.src(['src/app/app.js', 'src/app/**/*.js'])
+        return gulp.src(['src/app.js', 'src/**/*.js'])
             .pipe(jshint())
             .pipe(jshint.reporter('jshint-stylish'))
             .pipe(sort())
@@ -71,7 +71,7 @@
             .pipe(concat('app.js'))
             .pipe(annotate())
             .pipe(uglify())
-            .pipe(sourcemaps.write({sourceRoot: '/src/app'}))
+            .pipe(sourcemaps.write({sourceRoot: '/src'}))
             .pipe(gulp.dest('www/js/'));
     });
 
@@ -135,7 +135,7 @@
 
 
     gulp.task('templates', function () {
-        return gulp.src('src/app/**/*.html')
+        return gulp.src('src/**/*.html')
             .pipe(gulp.dest('www/js/'));
     });
 
@@ -154,9 +154,9 @@
 
 
     gulp.task('watch', function () {
-        gulp.watch('src/app/**/*.less', ['css-app']);
-        gulp.watch('src/app/**/*.js', ['js-app']);
-        gulp.watch('src/app/**/*.html', ['templates']);
+        gulp.watch('src/**/*.less', ['css-app']);
+        gulp.watch('src/**/*.js', ['js-app']);
+        gulp.watch('src/**/*.html', ['templates']);
     });
 
 })();
