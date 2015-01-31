@@ -7,6 +7,10 @@
     /* @ngInject */
     function UserService($q, $firebase, FBURL, account, session) {
         var getSync = function (userId) {
+            if (!userId) {
+                console.error('UserService getSync(userId)');
+            }
+
             var url = FBURL + 'users/' + userId + '/';
             var ref = new Firebase(url);
             return $firebase(ref);
