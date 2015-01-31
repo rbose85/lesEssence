@@ -20,7 +20,7 @@
 
         var setHideKeyboardAccessoryBar = function (value) {
             var keyboard = getKeyboard();
-            return keyboard && keyboard.disableScroll(!!(value));
+            return keyboard && keyboard.hideKeyboardAccessoryBar(!!(value));
         };
 
         return {
