@@ -35,7 +35,7 @@
         };
 
         var err = function (event, to, toParams, from, fromParams, error) {
-            console.error('State Error', angular.toJson(error, true));
+            console.error(angular.toJson(error, true));
         };
 
         var unknown = function (event, unfoundState) {
