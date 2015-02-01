@@ -56,12 +56,12 @@
             },
 
             getId: function () {
-                var session = session.getActive();
-                return session && session.id;
+                var sessionData = session.getActive();
+                return sessionData && sessionData.id;
             },
             getToken: function () {
-                var session = session.getActive();
-                return session && session.token;
+                var sessionData = session.getActive();
+                return sessionData && sessionData.token;
             }
         };
     }
