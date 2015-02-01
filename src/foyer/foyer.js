@@ -3,9 +3,9 @@
 
     angular.module('app.foyer', [])
         .config(FoyerRouter)
-        .controller('Passwd', PasswordController)
-        .controller('SignIn', SignInController)
-        .controller('SignUp', SignUpController);
+        .controller('PasswordFoyerController', PasswordController)
+        .controller('SignInFoyerController', SignInController)
+        .controller('SignUpFoyerController', SignUpController);
 
     /* @ngInject */
     function FoyerRouter($stateProvider) {
@@ -27,7 +27,7 @@
                 views: {
                     '@': {
                         templateUrl: 'js/foyer/passwd.html',
-                        controller: 'Passwd as vm'
+                        controller: 'PasswordFoyerController as vm'
                     }
                 }
             })
@@ -36,7 +36,7 @@
                 views: {
                     '@': {
                         templateUrl: 'js/foyer/signin.html',
-                        controller: 'SignIn as vm'
+                        controller: 'SignInFoyerController as vm'
                     }
                 }
             })
@@ -45,7 +45,7 @@
                 views: {
                     '@': {
                         templateUrl: 'js/foyer/signup.html',
-                        controller: 'SignUp as vm'
+                        controller: 'SignUpFoyerController as vm'
                     }
                 }
             });
