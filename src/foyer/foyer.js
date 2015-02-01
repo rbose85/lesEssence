@@ -52,12 +52,69 @@
     }
 
     /* @ngInject */
-    function PasswordController() {}
+    function PasswordController(user, spinner, redirect) {
+        var vm = this;
+
+        vm.submit = function () {
+            if (vm.form.$invalid) {
+                return;
+            }
+
+            spinner.show();
+
+            user.resetPassword(vm.form.email.$modelValue)
+                .then(function () {
+                    return redirect.to('foyer.welcome', true);
+                })
+                .catch(function (error) {
+                    console.error(angular.toJson(error, true));
+                    spinner.error('Unable to issue Password Recovery email.');
+                });
+        };
+    }
 
     /* @ngInject */
-    function SignInController() {}
+    function SignInController(user, spinner, redirect) {
+        var vm = this;
+
+        vm.submit = function () {
+            if (vm.form.$invalid) {
+                return;
+            }
+
+            spinner.show();
+
+            user.signIn(vm.form.email.$modelValue, vm.form.password.$modelValue)
+                .then(function () {
+                    return redirect.to('tabs.home', true);
+                })
+                .catch(function (error) {
+                    console.error(angular.toJson(error, true));
+                    spinner.error('Invalid credentials.');
+                });
+        };
+    }
 
     /* @ngInject */
-    function SignUpController() {}
+    function SignUpController(user, spinner, redirect) {
+        var vm = this;
+
+        vm.submit = function () {
+            if (vm.form.$invalid) {
+                return;
+            }
+
+            spinner.show();
+
+            user.create(vm.form.name.$modelValue, vm.form.email.$modelValue, vm.form.password.$modelValue)
+                .then(function () {
+                    return redirect.to('tabs.home', true);
+                })
+                .catch(function (error) {
+                    console.error(angular.toJson(error, true));
+                    spinner.error('Invalid details.');
+                });
+        };
+    }
 
 })();
