@@ -1,0 +1,13 @@
+<ion-view view-title="History">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="tank in vm.tanks">
+                <strong>{{tank.date | date : 'dd MMM' }}</strong>
+                <br/>
+                {{tank.milage}}<strong>(miles)</strong>
+                {{tank.volume}}<strong>(L)</strong> <strong>@</strong>
+                £{{tank.rate}}<strong>(per L)</strong>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

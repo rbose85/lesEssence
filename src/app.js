@@ -11,6 +11,13 @@
         'app.firebase',
         'app.foyer',
         'app.loading',
+
+        'app.tabs',
+        'app.tabs.history',
+        'app.tabs.home',
+        'app.tabs.settings',
+        'app.tabs.statistics',
+
         'app.templates'
     ])
         .constant('VERSION', '0.1')
