@@ -23,7 +23,8 @@
                     .then(function (authData) {
                         var sessionData = getSessionData(authData);
                         deferred.resolve(sessionData);
-                    }).catch(function (error) {
+                    })
+                    .catch(function (error) {
                         console.error(angular.toJson(error, true));
                         deferred.reject(error);
                     });
