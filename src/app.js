@@ -10,7 +10,8 @@
         'app.cordova',
         'app.firebase',
         'app.foyer',
-        'app.loading'
+        'app.loading',
+        'app.templates'
     ])
         .constant('VERSION', '0.1')
         .constant('FBURL', 'https://lesessence.firebaseio.com')
