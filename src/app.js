@@ -13,7 +13,7 @@
         'app.loading'
     ])
         .constant('VERSION', '0.1')
-        .constant('FBURL', 'https://lesessence.firebaseio.com/')
+        .constant('FBURL', 'https://lesessence.firebaseio.com')
         .config(AppRouter)
         .run(Initialisation);
 

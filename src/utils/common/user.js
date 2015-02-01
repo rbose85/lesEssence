@@ -11,7 +11,7 @@
                 console.error('UserService getSync(userId)');
             }
 
-            var url = FBURL + 'users/' + userId + '/';
+            var url = FBURL + '/users/' + userId + '/';
             var ref = new Firebase(url);
             return $firebase(ref);
         };
