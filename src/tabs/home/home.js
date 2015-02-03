@@ -11,7 +11,7 @@
         vm.signout = function () {
             user.signOut()
                 .then(function () {
-                    return redirect.to('foyer.welcome');
+                    return redirect.to('foyer.welcome', true);
                 });
         };
     }
