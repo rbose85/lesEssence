@@ -7,13 +7,15 @@
     /* @ngInject */
     function RedirectAppStateService($state, $ionicHistory) {
         return {
-            to: function redirectToState(state, removeCachedViews) {
+            to: function redirectToState(state, resetNavigationStack) {
                 $ionicHistory.nextViewOptions({
                     disableAnimate: true,
+                    disableBack: true,
                     historyRoot: true
                 });
 
-                if (removeCachedViews) {
+                if (resetNavigationStack) {
+                    $ionicHistory.clearHistory();
                     $ionicHistory.clearCache();
                 }
 
