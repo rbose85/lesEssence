@@ -15,7 +15,7 @@
                 url: '',
                 views: {
                     '@': {
-                        templateUrl: 'js/foyer/welcome.html'
+                        templateUrl: 'js/foyer/welcome/template.html'
                     }
                 }
             })
@@ -23,7 +23,7 @@
                 url: '/password',
                 views: {
                     '@': {
-                        templateUrl: 'js/foyer/password.html',
+                        templateUrl: 'js/foyer/password/template.html',
                         controller: 'PasswordFoyerController as vm'
                     }
                 }
@@ -32,7 +32,7 @@
                 url: '/signin',
                 views: {
                     '@': {
-                        templateUrl: 'js/foyer/signin.html',
+                        templateUrl: 'js/foyer/signin/template.html',
                         controller: 'SignInFoyerController as vm'
                     }
                 }
@@ -41,7 +41,7 @@
                 url: '/signup',
                 views: {
                     '@': {
-                        templateUrl: 'js/foyer/signup.html',
+                        templateUrl: 'js/foyer/signup/template.html',
                         controller: 'SignUpFoyerController as vm'
                     }
                 }
