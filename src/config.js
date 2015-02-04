@@ -4,13 +4,7 @@
     angular.module('app')
         .constant('VERSION', '0.1')
         .constant('FBURL', 'https://lesessence.firebaseio.com')
-        .config(AppRouter)
         .run(Initialisation);
-
-    /* @ngInject */
-    function AppRouter($urlRouterProvider) {
-        $urlRouterProvider.otherwise('/');
-    }
 
     /* @ngInject */
     function Initialisation($rootScope, $ionicPlatform, keyboard, statusbar) {
@@ -35,6 +29,7 @@
         $ionicPlatform.ready(function () {
             initKeyboard();
             initStatusBar();
+
 
             $rootScope.$on('$stateChangeError', err);
             $rootScope.$on('$stateNotFound', unknown);
