@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('app.tabs.home', [])
+    angular.module('app.tabs.home')
         .controller('HomeTabController', HomeController);
 
     /* @ngInject */

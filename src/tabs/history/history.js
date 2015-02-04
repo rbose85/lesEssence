@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('app.tabs.history', [])
+    angular.module('app.tabs.history')
         .controller('HistoryTabController', HistoryController);
 
     /* @ngInject */
