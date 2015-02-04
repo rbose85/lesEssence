@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('app.tabs', [])
+    angular.module('app.tabs')
         .config(Router);
 
 

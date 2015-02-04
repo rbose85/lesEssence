@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('app.foyer', [])
+    angular.module('app.foyer')
         .config(FoyerRouter)
         .controller('PasswordFoyerController', PasswordController)
         .controller('SignInFoyerController', SignInController)
