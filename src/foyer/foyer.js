@@ -22,11 +22,11 @@
                     }
                 }
             })
-            .state('foyer.passwd', {
-                url: '/passwd',
+            .state('foyer.password', {
+                url: '/password',
                 views: {
                     '@': {
-                        templateUrl: 'js/foyer/passwd.html',
+                        templateUrl: 'js/foyer/password.html',
                         controller: 'PasswordFoyerController as vm'
                     }
                 }
