@@ -30,7 +30,6 @@
             initKeyboard();
             initStatusBar();
 
-
             $rootScope.$on('$stateChangeError', err);
             $rootScope.$on('$stateNotFound', unknown);
         });

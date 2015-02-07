@@ -2,10 +2,10 @@
     'use strict';
 
     angular.module('app.foyer')
-        .controller('SignUpFoyerController', SignUpController);
+        .controller('FoyerPasswordController', FoyerPasswordCtrl);
 
     /* @ngInject */
-    function SignUpController(user, spinner, redirect) {
+    function FoyerPasswordCtrl(user, spinner, redirect) {
         var vm = this;
 
         vm.submit = function () {
@@ -15,13 +15,13 @@
 
             spinner.show();
 
-            user.create(vm.form.name.$modelValue, vm.form.email.$modelValue, vm.form.password.$modelValue)
+            user.resetPassword(vm.form.email.$modelValue)
                 .then(function () {
-                    return redirect.to('tabs.home', true);
+                    return redirect.to('foyer.welcome', true);
                 })
                 .catch(function (error) {
                     console.error(angular.toJson(error, true));
-                    spinner.error('Invalid details.');
+                    spinner.error('Unable to issue Password Recovery email.');
                 });
         };
     }

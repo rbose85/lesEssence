@@ -13,8 +13,8 @@
         'app.loading',
 
         'app.tabs',
-        'app.tabs.history',
         'app.tabs.home',
+        'app.tabs.refuel',
         'app.tabs.settings',
         'app.tabs.statistics',
 
