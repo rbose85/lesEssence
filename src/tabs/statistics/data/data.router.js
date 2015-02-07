@@ -1,0 +1,38 @@
+(function () {
+    'use strict';
+
+    angular.module('app.tabs.statistics')
+        .config(Router);
+
+    /* @ngInject */
+    function Router($stateProvider) {
+        $stateProvider
+            .state('tabs.statistics.data.list', {
+                url: '',
+                resolve: {
+                    async: function (tank) {
+                        return tank.getAll();
+                    },
+                    previousTanks: function (async) {
+                        return async.$loaded();
+                    }
+                },
+                views: {
+                    'statistics-tab@tabs': {
+                        templateUrl: 'js/tabs/statistics/data/list/list.tpl.html',
+                        controller: 'TabStatisticsDataListController as vm'
+                    }
+                }
+            })
+            .state('tabs.statistics.data.details', {
+                url: '/{tankId:[0-9]{1,4}}',
+                views: {
+                    'statistics-tab@tabs': {
+                        templateUrl: 'js/tabs/statistics/data/details/details.tpl.html',
+                        controller: 'TabStatisticsDataDetailsController as vm'
+                    }
+                }
+            });
+    }
+
+})();

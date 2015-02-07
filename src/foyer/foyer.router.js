@@ -15,7 +15,7 @@
                 url: '',
                 views: {
                     '@': {
-                        templateUrl: 'js/foyer/welcome/template.html'
+                        templateUrl: 'js/foyer/welcome/welcome.tpl.html'
                     }
                 }
             })
@@ -23,8 +23,8 @@
                 url: '/password',
                 views: {
                     '@': {
-                        templateUrl: 'js/foyer/password/template.html',
-                        controller: 'PasswordFoyerController as vm'
+                        templateUrl: 'js/foyer/password/password.tpl.html',
+                        controller: 'FoyerPasswordController as vm'
                     }
                 }
             })
@@ -32,8 +32,8 @@
                 url: '/signin',
                 views: {
                     '@': {
-                        templateUrl: 'js/foyer/signin/template.html',
-                        controller: 'SignInFoyerController as vm'
+                        templateUrl: 'js/foyer/signin/signin.tpl.html',
+                        controller: 'FoyerSigninController as vm'
                     }
                 }
             })
@@ -41,8 +41,8 @@
                 url: '/signup',
                 views: {
                     '@': {
-                        templateUrl: 'js/foyer/signup/template.html',
-                        controller: 'SignUpFoyerController as vm'
+                        templateUrl: 'js/foyer/signup/signup.tpl.html',
+                        controller: 'FoyerSignupController as vm'
                     }
                 }
             });

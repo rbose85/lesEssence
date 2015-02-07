@@ -1,0 +1,17 @@
+<ion-view view-title="Settings">
+    <ion-content padding="true" scroll="false">
+        <br/>
+        <ion-list>
+            <ion-item class="item-icon-right" ui-sref="tabs.settings.account">Account<i class="icon ion-chevron-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" ui-sref="tabs.settings.options">Options<i class="icon ion-chevron-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" ui-sref="tabs.settings.help">Help<i class="icon ion-chevron-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" ui-sref="tabs.settings.contact">Contact Us<i class="icon ion-chevron-right"></i>
+            </ion-item>
+        </ion-list>
+        <br/>
+        <button class="button button-full button-assertive icon-left ion-log-out" ng-click="vm.signout()">Log Out</button>
+    </ion-content>
+</ion-view>

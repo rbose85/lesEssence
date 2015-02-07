@@ -2,10 +2,10 @@
     'use strict';
 
     angular.module('app.foyer')
-        .controller('SignInFoyerController', SignInController);
+        .controller('FoyerSignupController', FoyerSignupCtrl);
 
     /* @ngInject */
-    function SignInController(user, spinner, redirect) {
+    function FoyerSignupCtrl(user, spinner, redirect) {
         var vm = this;
 
         vm.submit = function () {
@@ -15,13 +15,13 @@
 
             spinner.show();
 
-            user.signIn(vm.form.email.$modelValue, vm.form.password.$modelValue)
+            user.create(vm.form.name.$modelValue, vm.form.email.$modelValue, vm.form.password.$modelValue)
                 .then(function () {
                     return redirect.to('tabs.home', true);
                 })
                 .catch(function (error) {
                     console.error(angular.toJson(error, true));
-                    spinner.error('Invalid credentials.');
+                    spinner.error('Invalid details.');
                 });
         };
     }

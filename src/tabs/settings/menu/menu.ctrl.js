@@ -1,11 +1,11 @@
 (function () {
     'use strict';
 
-    angular.module('app.tabs.home')
-        .controller('HomeTabController', HomeController);
+    angular.module('app.tabs.settings')
+        .controller('TabsSettingsMenuController', TabsSettingsMenuCtrl);
 
     /* @ngInject */
-    function HomeController(user, redirect) {
+    function TabsSettingsMenuCtrl(user, redirect) {
         var vm = this;
 
         vm.signout = function () {
