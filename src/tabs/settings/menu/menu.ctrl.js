@@ -5,7 +5,7 @@
         .controller('TabsSettingsMenuController', TabsSettingsMenuCtrl);
 
     /* @ngInject */
-    function TabsSettingsMenuCtrl(user, redirect) {
+    function TabsSettingsMenuCtrl(redirect, user) {
         var vm = this;
 
         vm.signout = function () {
