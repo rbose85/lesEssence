@@ -27,7 +27,7 @@
                 url: '',
                 resolve: {
                     async: function (tank) {
-                        return tank.getAll();
+                        return tank.all();
                     },
                     previousTanks: function (async) {
                         return async.$loaded();

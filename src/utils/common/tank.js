@@ -14,7 +14,7 @@
             add: function (tankData) {
                 return sync.$push(tankData);
             },
-            getAll: function () {
+            all: function () {
                 return sync.$asArray();
             }
         };
