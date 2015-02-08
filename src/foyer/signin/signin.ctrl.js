@@ -8,6 +8,8 @@
     function FoyerSigninCtrl(user, spinner, redirect) {
         var vm = this;
 
+        vm.model = {};
+
         vm.submit = function () {
             if (vm.form.$invalid) {
                 return;
@@ -15,8 +17,9 @@
 
             spinner.show();
 
-            user.signIn(vm.form.email.$modelValue, vm.form.password.$modelValue)
+            user.signIn(vm.model.email, vm.model.password)
                 .then(function () {
+                    vm.model = {};
                     return redirect.to('tabs.home', true);
                 })
                 .catch(function (error) {
