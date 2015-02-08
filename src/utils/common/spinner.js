@@ -32,11 +32,20 @@
             $ionicLoading.hide();
         };
 
+        var timeout = function (message) {
+            show(message);
+
+            $timeout(function () {
+                hide();
+            }, 1000);
+        };
+
         return {
             loading: loading,
             error: error,
             show: show,
-            hide: hide
+            hide: hide,
+            timeout: timeout
         };
     }
 
