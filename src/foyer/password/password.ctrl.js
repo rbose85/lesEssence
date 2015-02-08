@@ -5,7 +5,7 @@
         .controller('FoyerPasswordController', FoyerPasswordCtrl);
 
     /* @ngInject */
-    function FoyerPasswordCtrl(user, spinner, redirect) {
+    function FoyerPasswordCtrl(redirect, spinner, user) {
         var vm = this;
 
         vm.model = {};

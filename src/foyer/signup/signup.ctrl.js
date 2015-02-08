@@ -5,7 +5,7 @@
         .controller('FoyerSignupController', FoyerSignupCtrl);
 
     /* @ngInject */
-    function FoyerSignupCtrl(user, spinner, redirect) {
+    function FoyerSignupCtrl(redirect, spinner, user) {
         var vm = this;
 
         vm.model = {};
