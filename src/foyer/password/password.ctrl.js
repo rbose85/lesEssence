@@ -8,6 +8,8 @@
     function FoyerPasswordCtrl(user, spinner, redirect) {
         var vm = this;
 
+        vm.model = {};
+
         vm.submit = function () {
             if (vm.form.$invalid) {
                 return;
@@ -15,8 +17,9 @@
 
             spinner.show();
 
-            user.resetPassword(vm.form.email.$modelValue)
+            user.resetPassword(vm.model.email)
                 .then(function () {
+                    vm.model = {};
                     return redirect.to('foyer.welcome', true);
                 })
                 .catch(function (error) {
