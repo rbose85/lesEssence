@@ -11,6 +11,9 @@
         var sync = $firebase(ref);
 
         return {
+            add: function (tankData) {
+                return sync.$push(tankData);
+            },
             getAll: function () {
                 return sync.$asArray();
             }
