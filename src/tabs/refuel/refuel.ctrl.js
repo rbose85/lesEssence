@@ -5,11 +5,32 @@
         .controller('TabsRefuelController', TabsRefuelCtrl);
 
     /* @ngInject */
-    function TabsRefuelCtrl() {
+    function TabsRefuelCtrl(redirect, spinner, tank) {
         var vm = this;
 
-        vm.clicker = function () {
-            console.log('-rb-');
+        vm.model = {};
+
+        vm.submit = function () {
+            if (vm.form.$invalid) {
+                return;
+            }
+
+            spinner.show();
+
+            tank.add({
+                date: new Date().toJSON(),
+                milage: vm.model.milage,
+                rate: vm.model.price,
+                volume: vm.model.volume
+            })
+                .then(function () {
+                    vm.model = {};
+                    return redirect.to('tabs.home');
+                })
+                .catch(function (error) {
+                    console.error(angular.toJson(error, true));
+                    spinner.error('Invalid details.');
+                });
         };
     }
 
