@@ -5,7 +5,7 @@
         .controller('FoyerPasswordController', FoyerPasswordCtrl);
 
     /* @ngInject */
-    function FoyerPasswordCtrl(redirect, spinner, user) {
+    function FoyerPasswordCtrl(keyboard, redirect, spinner, user) {
         var vm = this;
 
         vm.model = {};
@@ -15,6 +15,7 @@
                 return;
             }
 
+            keyboard.hide();
             spinner.show();
 
             user.resetPassword(vm.model.email)
