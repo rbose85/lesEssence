@@ -5,7 +5,7 @@
         .controller('FoyerSignupController', FoyerSignupCtrl);
 
     /* @ngInject */
-    function FoyerSignupCtrl(redirect, spinner, user) {
+    function FoyerSignupCtrl(keyboard, redirect, spinner, user) {
         var vm = this;
 
         vm.model = {};
@@ -15,6 +15,7 @@
                 return;
             }
 
+            keyboard.hide();
             spinner.show();
 
             user.create(vm.model.name, vm.model.email, vm.model.password)

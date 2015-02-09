@@ -5,7 +5,7 @@
         .controller('TabsRefuelController', TabsRefuelCtrl);
 
     /* @ngInject */
-    function TabsRefuelCtrl(redirect, spinner, tank) {
+    function TabsRefuelCtrl(keyboard, redirect, spinner, tank) {
         var vm = this;
 
         vm.model = {};
@@ -15,6 +15,7 @@
                 return;
             }
 
+            keyboard.hide();
             spinner.show();
 
             tank.add({
