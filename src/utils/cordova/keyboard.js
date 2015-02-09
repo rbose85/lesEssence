@@ -23,6 +23,11 @@
             return keyboard && keyboard.hideKeyboardAccessoryBar(!!(value));
         };
 
+        var dismissKeyboard = function (value) {
+            var keyboard = getKeyboard();
+            return (keyboard && value) ? keyboard.close() : keyboard.show();
+        };
+
         return {
             enableScroll: function () {
                 setDisableScroll(false);
@@ -35,6 +40,12 @@
             },
             hideAccessoryBar: function () {
                 setHideKeyboardAccessoryBar(true);
+            },
+            show: function () {
+                dismissKeyboard(false);
+            },
+            hide: function () {
+                dismissKeyboard(true);
             }
         };
     }
