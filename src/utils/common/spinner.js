@@ -6,7 +6,7 @@
 
     /* @ngInject */
     function SpinnerService($ionicLoading, $timeout) {
-        var spinnerIcon = '<i class="icon ion-loading-c"></i> ';
+        var spinnerIcon = '<i class="icon ion-load-c"></i> ';
 
         var show = function (message) {
             message = message || spinnerIcon;
