@@ -4,7 +4,7 @@
             Your past petrol-pump activity . . .
         </p>
         <ion-list>
-            <ion-item ng-repeat="tank in vm.tanks">
+            <ion-item ng-repeat="tank in vm.tanks | reverse">
                 <h2>{{tank.date | date : 'dd MMM' }}</h2>
 
                 <p>
