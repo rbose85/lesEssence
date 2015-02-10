@@ -16,7 +16,6 @@
         'app.tabs.home',
         'app.tabs.refuel',
         'app.tabs.settings',
-        'app.tabs.statistics',
 
         'app.templates'
     ]);
