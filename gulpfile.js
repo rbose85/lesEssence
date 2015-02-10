@@ -10,8 +10,6 @@
     var less = require('gulp-less');
     var sort = require('gulp-angular-filesort');
     var sourcemaps = require('gulp-sourcemaps');
-    var uglify = require('gulp-uglify');
-    var uglifycss = require('gulp-uglifycss');
     var util = require('gulp-util');
     var wiredep = require('wiredep');
 
@@ -23,7 +21,6 @@
             .pipe(sourcemaps.init())
             .pipe(concat('app.css'))
             .pipe(less())
-            .pipe(uglifycss())
             .pipe(sourcemaps.write({sourceRoot: '/src'}))
             .pipe(gulp.dest('www/css/'));
     });
@@ -70,7 +67,6 @@
             .pipe(sourcemaps.init())
             .pipe(concat('app.js'))
             .pipe(annotate())
-            .pipe(uglify())
             .pipe(sourcemaps.write({sourceRoot: '/src'}))
             .pipe(gulp.dest('www/js/'));
     });
