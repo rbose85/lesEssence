@@ -1,0 +1,19 @@
+<ion-view view-title="Log Book">
+    <ion-content>
+        <p class="padding text-center form-help-text">
+            Your past petrol-pump activity . . .
+        </p>
+        <ion-list>
+            <ion-item ng-repeat="tank in vm.tanks | reverse">
+                <h2>{{tank.date | date : 'dd MMM' }}</h2>
+
+                <p>
+                    {{tank.milage}}<strong>m</strong> {{tank.volume}}<strong>L</strong><strong>@</strong>£{{tank.rate}}<strong>(/L)</strong>
+                </p>
+
+                <ion-option-button class="button-positive" ng-click="vm.edit(tank)">Edit</ion-option-button>
+                <ion-option-button class="button-assertive" ng-click="vm.remove(tank)">Delete</ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
