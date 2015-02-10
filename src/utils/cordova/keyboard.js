@@ -25,7 +25,9 @@
 
         var dismissKeyboard = function (value) {
             var keyboard = getKeyboard();
-            return (keyboard && value) ? keyboard.close() : keyboard.show();
+            if (keyboard) {
+                return value ? keyboard.close() : keyboard.show();
+            }
         };
 
         return {
