@@ -4,7 +4,8 @@
   "dependencies": {
     "ionic": "driftyco/ionic-bower#master",
     "angularfire": "~0.9.2",
-    "ngCordova": "~0.1.11-alpha"
+    "ngCordova": "~0.1.11-alpha",
+    "font-awesome": "~4.3.0"
   },
   "overrides": {
     "firebase": {
