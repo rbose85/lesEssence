@@ -14,6 +14,7 @@
 
         'app.tabs',
         'app.tabs.home',
+        'app.tabs.logbook',
         'app.tabs.refuel',
         'app.tabs.settings',
 
