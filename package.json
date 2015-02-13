@@ -19,5 +19,12 @@
     "gulp-util": "^3.0.2",
     "jshint-stylish": "^1.0.0",
     "wiredep": "^2.2.2"
-  }
+  },
+  "cordovaPlugins": [
+    "com.ionic.keyboard",
+    "org.apache.cordova.console",
+    "org.apache.cordova.device",
+    "org.apache.cordova.splashscreen",
+    "org.apache.cordova.statusbar"
+  ]
 }
