@@ -2,10 +2,10 @@
     'use strict';
 
     var gulp = require('gulp');
-    var annotate = require('gulp-ng-annotate');
     var concat = require('gulp-concat');
     var del = require('del');
     var flatten = require('gulp-flatten');
+    var inject = require('gulp-inject');
     var jshint = require('gulp-jshint');
     var less = require('gulp-less');
     var sort = require('gulp-angular-filesort');
@@ -61,14 +61,9 @@
      *  Group task(s) to output folder: www/js
      * */
     gulp.task('js-app', function () {
-        return gulp.src(['src/app.js', 'src/**/*.js'])
+        return gulp.src('src/**/*.js')
             .pipe(jshint())
             .pipe(jshint.reporter('jshint-stylish'))
-            .pipe(sort())
-            .pipe(sourcemaps.init())
-            .pipe(concat('app.js'))
-            .pipe(annotate())
-            .pipe(sourcemaps.write({sourceRoot: '/src'}))
             .pipe(gulp.dest('www/js/'));
     });
 
@@ -109,7 +104,7 @@
     /*
      *  Group task(s) to output file: www/index.html
      * */
-    gulp.task('index', function () {
+    gulp.task('index-bower', function () {
         return gulp.src('www/index.html')
             .pipe(wiredep.stream({
                 fileTypes: {
@@ -128,6 +123,20 @@
                 }
             }))
             .pipe(gulp.dest('www/'));
+    });
+
+    gulp.task('index-app', function () {
+        return gulp.src('www/index.html')
+            .pipe(inject(gulp.src('src/**/*.js').pipe(sort()), {
+                addRootSlash: false,
+                addPrefix: 'js',
+                ignorePath: 'src'
+            }))
+            .pipe(gulp.dest('www/'));
+    });
+
+    gulp.task('index', ['index-bower'], function () {
+        gulp.start(['index-app']);
     });
 
 
@@ -152,7 +161,7 @@
 
     gulp.task('watch', function () {
         gulp.watch('src/**/*.less', ['css-app']);
-        gulp.watch('src/**/*.js', ['js-app']);
+        gulp.watch('src/**/*.js', ['js-app', 'index-app']);
         gulp.watch('src/**/*.html', ['templates']);
     });
 
