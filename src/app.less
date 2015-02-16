@@ -1,0 +1,88 @@
+// variables
+
+    // fonts
+
+        @fontDir: ~"../fonts";
+        @fontFallback: "Helvetica Neue", "Roboto", sans-serif;
+        @quicksand: "quicksandbook", @fontFallback;
+        @quicksandBold: "quicksandbold", @fontFallback;
+
+        @bodyFont: @quicksand;
+
+        @bodySize: 20px;
+        @bodySizeSmall: 15px;
+
+    // colors
+
+        @blue: #4fc7e2;
+        @lightBlue: mix(@blue, @grey, 10%);
+        @lightGrey: #f6f6f7;
+        @grey: #efeff4;
+        @black: mix(#000, @lightGrey, 75%);
+
+        @headerBgColor: @lightGrey;
+        @bodyBgColor: @grey;
+
+// font
+
+    @font-face {
+        font-family: 'quicksandbold';
+        src: url('@{fontDir}/quicksand_bold-webfont.eot');
+        src: url('@{fontDir}/quicksand_bold-webfont.eot?#iefix') format('embedded-opentype'),
+             url('@{fontDir}/quicksand_bold-webfont.woff') format('woff'),
+             url('@{fontDir}/quicksand_bold-webfont.ttf') format('truetype'),
+             url('@{fontDir}/quicksand_bold-webfont.svg#quicksandbold') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'quicksandbook';
+        src: url('@{fontDir}/quicksand_book-webfont.eot');
+        src: url('@{fontDir}/quicksand_book-webfont.eot?#iefix') format('embedded-opentype'),
+             url('@{fontDir}/quicksand_book-webfont.woff') format('woff'),
+             url('@{fontDir}/quicksand_book-webfont.ttf') format('truetype'),
+             url('@{fontDir}/quicksand_book-webfont.svg#quicksandbook') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+// base
+
+    body, input, button, select, textarea{
+        color: @black;
+    }
+
+// type
+
+    body, input, button, select, textarea{
+        font-family: @bodyFont;
+        font-size: 20px;
+        letter-spacing: -0.09em;
+    }
+
+    .button{
+        font-size: @bodySize;
+
+        &-small{
+            font-size: @bodySizeSmall;
+        }
+    }
+
+    .input{
+        &-label{
+            font-size: @bodySize;
+        }
+    }
+
+// ionic
+
+    .bar{
+        .title{}
+    }
+
+    .input{
+        &-label{
+            color: @black;
+        }
+    }
