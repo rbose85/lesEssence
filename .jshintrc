@@ -7,9 +7,20 @@
   "esnext": true,
   "globals": {
     "Firebase": false,
+
     "StatusBar": false,
+
     "angular": false,
-    "cordova": false
+
+    "cordova": false,
+
+    "jasmine": false,
+    "beforeEach": false,
+    "describe": false,
+    "expect": false,
+    "it": false,
+
+    "inject": false
   },
   "immed": true,
   "indent": 4,
