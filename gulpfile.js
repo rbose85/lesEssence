@@ -7,6 +7,7 @@
     var flatten = require('gulp-flatten');
     var inject = require('gulp-inject');
     var jshint = require('gulp-jshint');
+    var karma = require('karma');
     var less = require('gulp-less');
     var sort = require('gulp-angular-filesort');
     var sourcemaps = require('gulp-sourcemaps');
@@ -167,6 +168,21 @@
         gulp.watch(['src/**/*.js', '!src/**/*.spec.js'],
             ['js-app', 'index-app']);
         gulp.watch('src/**/*.html', ['templates']);
+    });
+
+
+    gulp.task('karma', function (done) {
+        return karma.server.start({
+            configFile: __dirname + '/karma.conf.js'
+        }, done);
+    });
+
+    gulp.task('karma-dev', function (done) {
+        return karma.server.start({
+            browsers: ['Chrome'],
+            configFile: __dirname + '/karma.conf.js',
+            singleRun: false
+        }, done);
     });
 
 })();
