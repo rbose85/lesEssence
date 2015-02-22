@@ -8,24 +8,24 @@
     function FoyerSigninCtrl(keyboard, redirect, spinner, user) {
         var vm = this;
 
-        vm.model = {};
+        vm.email = '';
+        vm.password = '';
 
         vm.submit = function () {
-            if (vm.form.$invalid) {
-                return;
-            }
-
             keyboard.hide();
             spinner.show();
 
-            user.signIn(vm.model.email, vm.model.password)
+            user.signIn(vm.email, vm.password)
                 .then(function () {
-                    vm.model = {};
                     return redirect.to('tabs.home', true);
                 })
                 .catch(function (error) {
                     console.error(angular.toJson(error, true));
                     spinner.error('Invalid credentials.');
+                })
+                .finally(function () {
+                    vm.email = '';
+                    vm.password = '';
                 });
         };
     }
