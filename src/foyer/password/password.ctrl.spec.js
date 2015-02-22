@@ -78,7 +78,6 @@ describe('FoyerPasswordController', function () {
             expect(vm.submit).toEqual(jasmine.any(Function));
         });
 
-
         it('should call "keyboard.hide()"', function () {
             vm.submit();
 
