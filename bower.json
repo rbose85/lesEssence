@@ -11,5 +11,8 @@
     "firebase": {
       "main": "firebase-debug.js"
     }
+  },
+  "devDependencies": {
+    "angular-mocks": "1.3.6"
   }
 }
