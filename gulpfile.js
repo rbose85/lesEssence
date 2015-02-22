@@ -61,7 +61,7 @@
      *  Group task(s) to output folder: www/js
      * */
     gulp.task('js-app', function () {
-        return gulp.src('src/**/*.js')
+        return gulp.src(['src/**/*.js', '!src/**/*.spec.js'])
             .pipe(jshint())
             .pipe(jshint.reporter('jshint-stylish'))
             .pipe(gulp.dest('www/js/'));
@@ -126,12 +126,15 @@
     });
 
     gulp.task('index-app', function () {
+        var options = {
+            addRootSlash: false,
+            addPrefix: 'js',
+            ignorePath: 'src'
+        };
+
         return gulp.src('www/index.html')
-            .pipe(inject(gulp.src('src/**/*.js').pipe(sort()), {
-                addRootSlash: false,
-                addPrefix: 'js',
-                ignorePath: 'src'
-            }))
+            .pipe(inject(gulp.src(['src/**/*.js', '!src/**/*.spec.js'])
+                .pipe(sort()), options))
             .pipe(gulp.dest('www/'));
     });
 
@@ -161,7 +164,8 @@
 
     gulp.task('watch', function () {
         gulp.watch('src/**/*.less', ['css-app']);
-        gulp.watch('src/**/*.js', ['js-app', 'index-app']);
+        gulp.watch(['src/**/*.js', '!src/**/*.spec.js'],
+            ['js-app', 'index-app']);
         gulp.watch('src/**/*.html', ['templates']);
     });
 
