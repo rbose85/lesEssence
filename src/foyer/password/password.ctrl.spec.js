@@ -74,23 +74,33 @@ describe('FoyerPasswordController', function () {
             expect(vm.submit).toBeDefined();
         });
 
+        it('should be of type Function', function () {
+            expect(vm.submit).toEqual(jasmine.any(Function));
+        });
+
+
         it('should call "keyboard.hide()"', function () {
             vm.submit();
+
             expect(mocks.keyboard.hide).toHaveBeenCalled();
         });
 
         it('should call "spinner.show()"', function () {
             vm.submit();
+
             expect(mocks.spinner.show).toHaveBeenCalled();
         });
 
         it('should call "user.recoverPassword()"', function () {
+            vm.email = 'test@example.com';
+
             vm.submit();
-            expect(mocks.user.recoverPassword).toHaveBeenCalled();
+
+            expect(mocks.user.recoverPassword)
+                .toHaveBeenCalledWith(vm.email);
         });
 
         describe('user.recoverPassword()', function () {
-
             describe('then()', function () {
                 beforeEach(function () {
                     deferreds.recoverPassword.resolve();
@@ -99,7 +109,8 @@ describe('FoyerPasswordController', function () {
                 });
 
                 it('should call "redirect.to()"', function () {
-                    expect(mocks.redirect.to).toHaveBeenCalled();
+                    expect(mocks.redirect.to)
+                        .toHaveBeenCalledWith('foyer.welcome', true);
                 });
             });
 
@@ -120,13 +131,15 @@ describe('FoyerPasswordController', function () {
             });
 
             describe('finally()', function () {
-                it('should reset "vm.email"', function () {
+                beforeEach(function () {
                     vm.email = 'test@example.com';
 
                     deferreds.recoverPassword.resolve();
                     vm.submit();
                     $scope.$digest();
+                });
 
+                it('should reset "vm.email"', function () {
                     expect(vm.email).toBe('');
                 });
             });
