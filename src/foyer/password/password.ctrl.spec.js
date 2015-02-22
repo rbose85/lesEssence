@@ -132,5 +132,4 @@ describe('FoyerPasswordController', function () {
             });
         });
     });
-
 });
