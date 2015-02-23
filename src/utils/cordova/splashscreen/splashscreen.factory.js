@@ -6,12 +6,14 @@
 
     /* @ngInject */
     function SplashScreenService($timeout, $window, $cordovaSplashscreen) {
+        var isSplashScreen = function () {
+            return !!($window.navigator && $window.navigator.splashscreen);
+        };
+
         var toggleSplashScreen = function (state) {
-            if ($window.navigator && $window.navigator.splashscreen) {
-                return $timeout(function () {
+            return isSplashScreen() && $timeout(function () {
                     $cordovaSplashscreen[state]();
                 }, 0);
-            }
         };
 
         return {

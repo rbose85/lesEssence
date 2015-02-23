@@ -5,29 +5,22 @@
         .factory('keyboard', KeyboardService);
 
     /* @ngInject */
-    function KeyboardService($window) {
+    function KeyboardService($window, $cordovaKeyboard) {
 
-        var getKeyboard = function () {
-            if ($window.cordova) {
-                return $window.cordova.plugins.Keyboard;
-            }
+        var isKeyboard = function () {
+            return !!($window.cordova && $window.cordova.plugins.Keyboard);
         };
 
         var setDisableScroll = function (value) {
-            var keyboard = getKeyboard();
-            return keyboard && keyboard.disableScroll(!!(value));
+            return isKeyboard() && $cordovaKeyboard.disableScroll(!!value);
         };
 
         var setHideKeyboardAccessoryBar = function (value) {
-            var keyboard = getKeyboard();
-            return keyboard && keyboard.hideKeyboardAccessoryBar(!!(value));
+            return isKeyboard() && $cordovaKeyboard.hideAccessoryBar(!!value);
         };
 
-        var dismissKeyboard = function (value) {
-            var keyboard = getKeyboard();
-            if (keyboard) {
-                return value ? keyboard.close() : keyboard.show();
-            }
+        var dismissKeyboard = function () {
+            return isKeyboard() && $cordovaKeyboard.close();
         };
 
         return {
@@ -43,11 +36,8 @@
             hideAccessoryBar: function () {
                 setHideKeyboardAccessoryBar(true);
             },
-            show: function () {
-                dismissKeyboard(false);
-            },
             hide: function () {
-                dismissKeyboard(true);
+                dismissKeyboard();
             }
         };
     }
