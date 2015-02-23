@@ -173,13 +173,15 @@
 
     gulp.task('karma', function (done) {
         return karma.server.start({
-            configFile: __dirname + '/karma.conf.js'
+            configFile: __dirname + '/karma.conf.js',
+            singleRun: true
         }, done);
     });
 
     gulp.task('karma-dev', function (done) {
         return karma.server.start({
             browsers: ['Chrome'],
+            autoWatch: true,
             configFile: __dirname + '/karma.conf.js',
             singleRun: false
         }, done);
