@@ -22,13 +22,15 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'www/lib/angular.js',
-            'www/lib/ionic.js',
-            'www/lib/**/*.js',
+            {pattern: 'www/lib/angular.js', watch: false},
+            {pattern: 'bower_components/angular-mocks/angular-mocks.js', watch: false},
 
-            'bower_components/angular-mocks/angular-mocks.js',
+            {pattern: 'www/lib/ionic.js', watch: false},
+            {pattern: 'www/lib/**/*.js', watch: false},
 
-            'src/**/*.module.js',
+
+
+            {pattern: 'src/**/*.module.js', watch: false},
             'src/**/*.{js,html}',
 
             'src/**/*.spec.js'
