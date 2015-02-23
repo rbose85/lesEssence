@@ -8,24 +8,26 @@
     function FoyerSignupCtrl(keyboard, redirect, spinner, user) {
         var vm = this;
 
-        vm.model = {};
+        vm.name = '';
+        vm.email = '';
+        vm.password = '';
 
         vm.submit = function () {
-            if (vm.form.$invalid) {
-                return;
-            }
-
             keyboard.hide();
             spinner.show();
 
-            user.create(vm.model.name, vm.model.email, vm.model.password)
+            user.create(vm.name, vm.email, vm.password)
                 .then(function () {
-                    vm.model = {};
                     return redirect.to('tabs.home', true);
                 })
                 .catch(function (error) {
                     console.error(angular.toJson(error, true));
                     spinner.error('Invalid details.');
+                })
+                .finally(function () {
+                    vm.name = '';
+                    vm.email = '';
+                    vm.password = '';
                 });
         };
     }
