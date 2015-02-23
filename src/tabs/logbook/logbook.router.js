@@ -32,8 +32,7 @@
                 url: '/details/{tankId:-[\w-]{19}}',
                 views: {
                     'logbook-tab@tabs': {
-                        templateUrl: 'js/tabs/logbook/details/details.tpl.html',
-                        controller: 'TabsLogbookDetailsController as vm'
+                        templateUrl: 'js/tabs/logbook/details/details.tpl.html'
                     }
                 }
             })
@@ -41,8 +40,7 @@
                 url: '/edit/{tankId:-[\w-]{19}}',
                 views: {
                     'logbook-tab@tabs': {
-                        templateUrl: 'js/tabs/logbook/edit/edit.tpl.html',
-                        controller: 'TabsLogbookEditController as vm'
+                        templateUrl: 'js/tabs/logbook/edit/edit.tpl.html'
                     }
                 }
             });
