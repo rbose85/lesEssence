@@ -6,7 +6,6 @@
 
     /* @ngInject */
     function KeyboardService($window, $cordovaKeyboard) {
-
         var isKeyboard = function () {
             return !!($window.cordova && $window.cordova.plugins.Keyboard);
         };
