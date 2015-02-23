@@ -28,8 +28,6 @@ module.exports = function (config) {
             {pattern: 'www/lib/ionic.js', watch: false},
             {pattern: 'www/lib/**/*.js', watch: false},
 
-
-
             {pattern: 'src/**/*.module.js', watch: false},
             'src/**/*.{js,html}',
 
@@ -47,7 +45,7 @@ module.exports = function (config) {
         logLevel: config.LOG_INFO,
 
         // watch files, and executing tests whenever any file changes
-        autoWatch: true,
+        autoWatch: false,
 
         // browser list: https://npmjs.org/browse/keyword/karma-launcher
         browsers: ['Chrome', 'Firefox', 'Safari', 'ChromeCanary', 'PhantomJS'],
