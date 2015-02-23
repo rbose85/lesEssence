@@ -5,20 +5,19 @@
         .factory('statusbar', StatusBarService);
 
     /* @ngInject */
-    function StatusBarService($window) {
-
-        var getStatusBar = function () {
-            return $window.StatusBar;
+    function StatusBarService($window, $cordovaStatusbar) {
+        var isStatusBar = function () {
+            return !!$window.StatusBar;
         };
 
         var setLightContent = function () {
-            var statusBar = getStatusBar();
-            return statusBar && statusBar.styleLightContent();
+            // Default:0, LightContent:1, BlackTranslucent:2, BlackOpaque:3
+            return isStatusBar() && $cordovaStatusbar.style(1);
         };
 
         var setDarkContent = function () {
-            var statusBar = getStatusBar();
-            return statusBar && statusBar.styleDefault();
+            // Default:0, LightContent:1, BlackTranslucent:2, BlackOpaque:3
+            return isStatusBar() && $cordovaStatusbar.style(0);
         };
 
         return {
