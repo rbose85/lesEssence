@@ -5,7 +5,7 @@
         .factory('user', UserService);
 
     /* @ngInject */
-    function UserService($q, $firebase, FBURL, account, session) {
+    function UserService($firebase, FBURL, account, session) {
         var getSync = function (userId) {
             if (!userId) {
                 console.error('UserService getSync(userId)');
@@ -17,22 +17,14 @@
         };
 
         var createUser = function (name, email, password) {
-            var deferred = $q.defer();
-
-            account.create(name, email, password)
+            return account.create(name, email, password)
                 .then(function () {
                     return session.create(email, password);
                 })
                 .then(function (sessionData) {
-                    var userId = sessionData.id;
-                    return getSync(userId).$set({details: {name: name}});
-                })
-                .catch(function (error) {
-                    console.error(angular.toJson(error, true));
-                    deferred.reject(error);
+                    return getSync(sessionData.id)
+                        .$set({details: {name: name}});
                 });
-
-            return deferred.promise;
         };
 
         return {
