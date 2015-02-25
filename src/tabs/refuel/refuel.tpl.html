@@ -1,24 +1,24 @@
 <ion-view view-title="At the Pumps ?">
     <ion-nav-buttons side="secondary">
-        <button class="button button-icon" ng-click="vm.submit()" ng-disabled="vm.form.$invalid">Done</button>
+        <button class="button button-icon" ng-click="vm.submit()" ng-disabled="vm.refuelForm.$invalid">Done</button>
     </ion-nav-buttons>
     <ion-content padding="true" scroll="false">
         <p class="padding padding-horizontal text-center form-help-text">
             Complete the form and record your tank!
         </p>
 
-        <form class="list list-inset" name="vm.form" role="form" ng-submit="vm.submit()" novalidate>
+        <form class="list list-inset" name="vm.refuelForm" role="form" ng-submit="vm.submit()" novalidate>
             <label class="item item-input">
                 <span class="input-label">Volume (Litres)</span>
-                <input type="number" name="volume" ng-model="vm.model.volume" placeholder="28.60" required/>
+                <input type="number" name="volume" ng-model="vm.volume" placeholder="28.60" required/>
             </label>
             <label class="item item-input">
                 <span class="input-label">Price per Litre (p)</span>
-                <input type="number" name="price" ng-model="vm.model.price" placeholder="104.9" required/>
+                <input type="number" name="price" ng-model="vm.price" placeholder="104.9" required/>
             </label>
             <label class="item item-input">
                 <span class="input-label">Milage (miles)</span>
-                <input type="number" name="milage" ng-model="vm.model.milage" placeholder="330.9" required/>
+                <input type="number" name="milage" ng-model="vm.milage" placeholder="330.9" required/>
             </label>
             <input type="submit" class="button button-block button-hidden"/>
         </form>

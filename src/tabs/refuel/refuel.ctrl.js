@@ -8,29 +8,31 @@
     function TabsRefuelCtrl(keyboard, redirect, spinner, tank) {
         var vm = this;
 
-        vm.model = {};
+        vm.volume = '';
+        vm.price = '';
+        vm.milage = '';
 
         vm.submit = function () {
-            if (vm.form.$invalid) {
-                return;
-            }
-
             keyboard.hide();
             spinner.show();
 
             tank.add({
                 date: new Date().toJSON(),
-                milage: vm.model.milage,
-                rate: vm.model.price,
-                volume: vm.model.volume
+                milage: vm.milage,
+                rate: vm.price,
+                volume: vm.volume
             })
                 .then(function () {
-                    vm.model = {};
-                    return redirect.to('tabs.home');
+                    return redirect.to('tabs.logbook.list');
                 })
                 .catch(function (error) {
                     console.error(angular.toJson(error, true));
                     spinner.error('Invalid details.');
+                })
+                .finally(function () {
+                    vm.volume = '';
+                    vm.price = '';
+                    vm.milage = '';
                 });
         };
     }
