@@ -5,7 +5,7 @@
         .factory('session', SessionService);
 
     /* @ngInject */
-    function SessionService($q, $timeout, auth) {
+    function SessionService($timeout, auth) {
         var authObj = auth.getManager();
 
         var getSessionData = function (authData) {
@@ -17,19 +17,13 @@
 
         return {
             create: function (email, password) {
-                var deferred = $q.defer();
-
-                authObj.$authWithPassword({email: email, password: password})
+                return authObj.$authWithPassword({
+                    email: email,
+                    password: password
+                })
                     .then(function (authData) {
-                        var sessionData = getSessionData(authData);
-                        deferred.resolve(sessionData);
-                    })
-                    .catch(function (error) {
-                        console.error(angular.toJson(error, true));
-                        deferred.reject(error);
+                        return getSessionData(authData);
                     });
-
-                return deferred.promise;
             },
             end: function () {
                 return $timeout(function () {
