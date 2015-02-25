@@ -1,5 +1,22 @@
 <ion-view view-title="Home">
     <ion-content padding="true" scroll="false">
-        W I P -- home
+        <div class="card">
+            <div class="item item-divider">
+                Average MPG
+            </div>
+            <div class="item item-text-wrap stats-value">{{ vm.averageMPG | number }}</div>
+        </div>
+        <div class="card">
+            <div class="item item-divider">
+                Average Price (Pounds per Litre)
+            </div>
+            <div class="item item-text-wrap stats-value">{{ vm.averagePPL | currency:"£" }}</div>
+        </div>
+        <div class="card">
+            <div class="item item-divider">
+                Average Price per Tank
+            </div>
+            <div class="item item-text-wrap stats-value">{{ vm.averageTank | currency:"£" }}</div>
+        </div>
     </ion-content>
 </ion-view>

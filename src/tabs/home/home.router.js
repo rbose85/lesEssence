@@ -9,9 +9,18 @@
         $stateProvider
             .state('tabs.home', {
                 url: '/home',
+                resolve: {
+                    async: function (tank) {
+                        return tank.all();
+                    },
+                    previousTanks: function (async) {
+                        return async.$loaded();
+                    }
+                },
                 views: {
                     'home-tab': {
-                        templateUrl: 'js/tabs/home/home.tpl.html'
+                        templateUrl: 'js/tabs/home/home.tpl.html',
+                        controller: 'TabsHomeController as vm'
                     }
                 }
             });
