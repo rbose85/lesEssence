@@ -1,8 +1,12 @@
-<ion-view view-title="lesEssence">
+<ion-view view-title="Sign In">
     <ion-nav-buttons side="secondary">
         <button class="button button-icon" ng-click="vm.submit()" ng-disabled="vm.signinForm.$invalid">Sign In</button>
     </ion-nav-buttons>
     <ion-content padding="true" scroll="false">
+        <div class="logo logo-horz">
+            <img src="img/drip-white-small.svg" alt="lesEssence Logo">
+            <p><span>les</span>Essence</p>
+        </div>
         <form class="list list-inset" name="vm.signinForm" role="form" ng-submit="vm.submit()" novalidate>
             <label class="item item-input">
                 <span class="input-label">Email</span>
@@ -15,7 +19,7 @@
             <input type="submit" class="button button-block button-hidden"/>
         </form>
         <p class="padding text-center">
-            <button ui-sref="foyer.password" class="button button-small button-clear button-positive">Forgot Password?</button>
+            <button ui-sref="foyer.password" class="button button-small button-clear button-positive">I've forgotten my Password?</button>
         </p>
     </ion-content>
 </ion-view>
