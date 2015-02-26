@@ -1,51 +1,12 @@
+    // @import 'common/functions.less';
+
 // variables
 
-    // fonts
-
-        @fontDir: ~"../fonts";
-        @fontFallback: "Helvetica Neue", "Roboto", sans-serif;
-        @quicksand: "quicksandbook", @fontFallback;
-        @quicksandBold: "quicksandbold", @fontFallback;
-
-        @bodyFont: @quicksand;
-
-        @bodySize: 20px;
-        @bodySizeSmall: 15px;
-
-    // colors
-
-        @blue: #4fc7e2;
-        @lightBlue: mix(@blue, @grey, 10%);
-        @lightGrey: #f6f6f7;
-        @grey: #efeff4;
-        @black: mix(#000, @lightGrey, 75%);
-
-        @headerBgColor: @lightGrey;
-        @bodyBgColor: @grey;
+    @import 'common/variables.less';
 
 // font
 
-    @font-face {
-        font-family: 'quicksandbold';
-        src: url('@{fontDir}/quicksand_bold-webfont.eot');
-        src: url('@{fontDir}/quicksand_bold-webfont.eot?#iefix') format('embedded-opentype'),
-             url('@{fontDir}/quicksand_bold-webfont.woff') format('woff'),
-             url('@{fontDir}/quicksand_bold-webfont.ttf') format('truetype'),
-             url('@{fontDir}/quicksand_bold-webfont.svg#quicksandbold') format('svg');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'quicksandbook';
-        src: url('@{fontDir}/quicksand_book-webfont.eot');
-        src: url('@{fontDir}/quicksand_book-webfont.eot?#iefix') format('embedded-opentype'),
-             url('@{fontDir}/quicksand_book-webfont.woff') format('woff'),
-             url('@{fontDir}/quicksand_book-webfont.ttf') format('truetype'),
-             url('@{fontDir}/quicksand_book-webfont.svg#quicksandbook') format('svg');
-        font-weight: normal;
-        font-style: normal;
-    }
+    // @import 'common/fonts.less';
 
 // base
 
@@ -53,12 +14,46 @@
         color: @black;
     }
 
+    textarea, input[type="text"], input[type="password"],
+    input[type="datetime"], input[type="datetime-local"], input[type="date"],
+    input[type="month"], input[type="time"], input[type="week"],
+    input[type="number"], input[type="email"], input[type="url"],
+    input[type="search"], input[type="tel"], input[type="color"]{
+        color: @black;
+    }
+
+    .input-label {
+        color: #000;
+    }
+
+    input, textarea{&::-webkit-input-placeholder{#placeholder}}
+    input, textarea{&:-moz-placeholder{#placeholder}}
+    input, textarea{&::-moz-placeholder{#placeholder}}
+    input, textarea{&:-ms-input-placeholder{#placeholder}}
+
+    #placeholder{
+        color: mix(#000,#fff,25%);
+    }
+
+    p{
+        line-height: 1.200em;
+    }
+
 // type
 
     body, input, button, select, textarea{
         font-family: @bodyFont;
-        font-size: 20px;
+        font-size: @bodySize;
         letter-spacing: -0.09em;
+    }
+
+    textarea, input[type="text"], input[type="password"],
+    input[type="datetime"], input[type="datetime-local"], input[type="date"],
+    input[type="month"], input[type="time"], input[type="week"],
+    input[type="number"], input[type="email"], input[type="url"],
+    input[type="search"], input[type="tel"], input[type="color"]{
+        font-size: @bodySize;
+        line-height: 22px;
     }
 
     .button{
@@ -77,12 +72,68 @@
 
 // ionic
 
-    .bar{
-        .title{}
-    }
+    .logo{
+        text-align: center;
+        font-size: 40px;
 
-    .input{
-        &-label{
+        span{
+            font-family: @bodyFontBold;
+        }
+
+        img{
+            display: inline-block;
+        }
+
+        p{
+            margin: 0;
+        }
+
+        &.logo-horz{
+            margin: 20px 0 40px;
+            height: @logoHeight;
+            color: #fff;
+
+            img{
+                height: @logoHeight;
+                display: inline-block;
+                vertical-align: -15px;
+            }
+
+            p{
+                display: inline-block;
+            }
+        }
+
+        &.logo-large{
             color: @black;
+            position: relative;
+            font-size: 35px;
+            padding: 20px 0;
+
+            img{
+                height: 330px;
+            }
+
+            p{
+                position: absolute;
+                top: 55%;
+                left: 0;
+                right: 0;
+                display: block;
+            }
         }
     }
+
+// Android
+
+    // .platform-android{
+    //     .bar{
+    //         .title {
+    //             font-size: @bodySize;
+    //         }
+    //     }
+    // }
+
+    // .bar .button.button-icon {
+    //     font-size: 20px;
+    // }
