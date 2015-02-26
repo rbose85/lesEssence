@@ -1,7 +1,55 @@
-.button-hidden {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  visibility: hidden;
+[view-title="Welcome"],
+[view-title="Sign In"],
+[view-title="New Account"],
+[view-title="Forgot Password"]{
+    #gradient(@background: @blue, @color: @blue, @switch: 0%, @stop: mix(#fff, @blue, 25%));
+    color: #fff;
+
+    .button-hidden {
+        #sr-only;
+    }
+
+    .list-inset{
+        background: transparent;
+    }
+
+    .item{
+        border-color: @blue;
+    }
+
+    .button{
+        &.button-positive{
+            border-color: @darkBlue;
+            background-color: @darkBlue;
+
+            &.activated{
+                border-color: darken(@darkBlue, 10%);
+                background-color: darken(@darkBlue, 10%);
+            }
+
+            &.button-clear{
+                background: none;
+                border-color: transparent;
+                color: #fff;
+            }
+        }
+    }
 }
+
+.bar{
+    border-bottom-color: transparent;
+    color: #fff;
+
+    &-header{
+        background: @blue
+    }
+
+    .button{
+        color: #fff;
+
+        &.back-button{
+
+        }
+    }
+}
+
