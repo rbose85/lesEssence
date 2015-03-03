@@ -11,7 +11,7 @@
 // base
 
     body, input, button, select, textarea{
-        color: @black;
+        color: @bodyColor;
     }
 
     textarea, input[type="text"], input[type="password"],
@@ -19,7 +19,7 @@
     input[type="month"], input[type="time"], input[type="week"],
     input[type="number"], input[type="email"], input[type="url"],
     input[type="search"], input[type="tel"], input[type="color"]{
-        color: @black;
+        color: @bodyColor;
     }
 
     .input-label {
@@ -110,7 +110,7 @@
         }
 
         &.logo-large{
-            color: @black;
+            color: @bodyColor;
             position: relative;
             font-size: 35px;
             padding: 20px 0;
@@ -134,11 +134,15 @@
         letter-spacing: normal;
     }
 
+    .pane, .view{
+        background: @bodyBgColor
+    }
+
 // lists
 
     .item{
         font-size: @fontSizeItemTitle;
-        color: @black;
+        color: @bodyColor;
 
         h2{
             font-size: inherit;
