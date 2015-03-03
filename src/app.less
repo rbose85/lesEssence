@@ -2,7 +2,7 @@
 
 // variables
 
-    @import 'common/variables.less';
+    //@import 'common/variables.less';
 
 // font
 
@@ -54,6 +54,11 @@
     input[type="search"], input[type="tel"], input[type="color"]{
         font-size: @bodySize;
         line-height: 22px;
+    }
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+        font-family: @bodyFont;
+        color: @black
     }
 
     .button{
@@ -120,6 +125,65 @@
                 left: 0;
                 right: 0;
                 display: block;
+            }
+        }
+    }
+
+    .tab-title{
+        font-size: @fontSizeTabTitle;
+        letter-spacing: normal;
+    }
+
+// lists
+
+    .item{
+        font-size: @fontSizeItemTitle;
+        color: @black;
+
+        h2{
+            font-size: inherit;
+        }
+
+        p{
+            font-size: @fontSizeItemContent;
+            color: @grey;
+        }
+
+        time{
+            positiosn: absolute;
+            top: @itemPadding;
+            right: @itemPadding;
+            line-height: @itemTitleLineHeight;
+            display: block;
+        }
+
+        .icon{
+            color: @grey;
+            font-size: inherit;
+        }
+    }
+
+    .tabs-striped{
+        &.tabs-light{
+            .tab-item{
+                &.tab-item{
+                    &-active,
+                    &.active,
+                    &.activated{
+                        border-color: @blue;
+                        color: @blue;
+                    }
+                }
+            }
+        }
+    }
+
+    .tab{
+        &-item{
+            &.tab-item-active,
+            &.active,
+            &.activated{
+                color: @blue
             }
         }
     }
