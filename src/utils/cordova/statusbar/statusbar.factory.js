@@ -5,27 +5,53 @@
         .factory('statusbar', StatusBarService);
 
     /* @ngInject */
-    function StatusBarService($window, $cordovaStatusbar) {
+    function StatusBarService($timeout, $window, $cordovaStatusbar) {
         var isStatusBar = function () {
             return !!$window.StatusBar;
         };
 
-        var setLightContent = function () {
-            // Default:0, LightContent:1, BlackTranslucent:2, BlackOpaque:3
-            return isStatusBar() && $cordovaStatusbar.style(1);
+        var setContent = function (style) {
+            var value;
+            switch (style) {
+                case 'LightContent':
+                    value = 1;
+                    break;
+                case 'BlackTranslucent':
+                    value = 2;
+                    break;
+                case 'BlackOpaque':
+                    value = 3;
+                    break;
+                case 'DarkContent':
+                    value = 0;
+                    break;
+                default:
+                    value = 0;
+            }
+
+            return isStatusBar() && $timeout(function () {
+                    $cordovaStatusbar.style(value);
+                }, 0);
         };
 
-        var setDarkContent = function () {
-            // Default:0, LightContent:1, BlackTranslucent:2, BlackOpaque:3
-            return isStatusBar() && $cordovaStatusbar.style(0);
+        var toggleStatusBar = function (state) {
+            return isStatusBar() && $timeout(function () {
+                    $cordovaStatusbar[state]();
+                }, 0);
         };
 
         return {
             light: function () {
-                setLightContent();
+                setContent('LightContent');
             },
             dark: function () {
-                setDarkContent();
+                setContent('DarkContent');
+            },
+            show: function () {
+                toggleStatusBar('show');
+            },
+            hide: function () {
+                toggleStatusBar('hide');
             }
         };
     }

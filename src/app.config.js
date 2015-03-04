@@ -7,7 +7,7 @@
         .run(Initialisation);
 
     /* @ngInject */
-    function Initialisation($rootScope, $ionicPlatform, keyboard, statusbar) {
+    function Initialisation($rootScope, $ionicPlatform, keyboard) {
 
         var initKeyboard = function () {
             keyboard.disableScroll();
@@ -15,7 +15,7 @@
         };
 
         var initStatusBar = function () {
-            statusbar.dark();
+            ionic.Platform.showStatusBar(true);
         };
 
         var err = function (event, to, toParams, from, fromParams, error) {
