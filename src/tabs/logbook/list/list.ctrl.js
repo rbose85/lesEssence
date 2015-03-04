@@ -28,8 +28,6 @@
         };
 
         vm.remove = function (tank) {
-            console.log('--rb-- delete(tank): ', tank);
-
             $ionicPopup.confirm({
                 title: 'D E L E T E',
                 template: 'Are you sure you want to delete this record?'
@@ -40,7 +38,6 @@
                     }
                 });
         };
-
     }
 
 })();
