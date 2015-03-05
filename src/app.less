@@ -82,7 +82,7 @@
         font-size: 40px;
 
         span{
-            font-family: @bodyFontBold;
+            font-weight: bold;
         }
 
         img{
@@ -129,13 +129,53 @@
         }
     }
 
+    .pane, .view{
+        background: @bodyBgColor
+    }
+
     .tab-title{
         font-size: @fontSizeTabTitle;
         letter-spacing: normal;
     }
 
-    .pane, .view{
-        background: @bodyBgColor
+    .bar{
+        border-bottom-color: @grey;
+        color: @bodyColor;
+
+        &-header{
+            background: @headerBgColor !important;
+        }
+
+        .button{
+            color: @linkColor;
+            background-color: transparent;
+            border-color: transparent;
+
+            &.back-button{
+
+            }
+        }
+
+        .title{
+            font-size: @fontSizeHeaderTitle;
+
+            .platform-android &{
+                font-size: @fontSizeHeaderTitle
+            }
+        }
+    }
+
+
+// buttons
+
+    .button{
+        border-color: @buttonBgColor;
+        background-color: @buttonBgColor;
+        color: @buttonColor;
+
+        &.button-assertive{
+
+        }
     }
 
 // lists
@@ -143,6 +183,7 @@
     .item{
         font-size: @fontSizeItemTitle;
         color: @bodyColor;
+        background-color: @itemBgColor;
 
         h2{
             font-size: inherit;
@@ -192,16 +233,8 @@
         }
     }
 
+    .list-inset{
+        background-color: transparent;
+    }
+
 // Android
-
-    // .platform-android{
-    //     .bar{
-    //         .title {
-    //             font-size: @bodySize;
-    //         }
-    //     }
-    // }
-
-    // .bar .button.button-icon {
-    //     font-size: 20px;
-    // }

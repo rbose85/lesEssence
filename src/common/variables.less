@@ -2,35 +2,14 @@
 
     @fontDir: ~"../fonts";
     @fontFallback: "Helvetica Neue", "Roboto", sans-serif;
-    @quicksand: "quicksandbook", @fontFallback;
-    @quicksandBold: "quicksandbold", @fontFallback;
+    @quicksand: "quicksand", @fontFallback;
 
     @bodyFont: @quicksand;
-    @bodyFontBold: @quicksandBold;
+
+// font sizes
 
     @bodySize: 23px;
     @bodySizeSmall: 16px;
-
-// colors
-
-    @blue: #4fc7e2;
-    @lightBlue: mix(@blue, @grey, 10%);
-    @darkBlue: #46a2b6;
-
-    @white: #f6f6f7;
-    @lightGrey: mix(@black, #fff, 10%);
-    @grey: mix(@black, #fff, 50%);
-    @black: mix(#000, #fff, 60%);
-
-    @headerBgColor: @white;
-    @bodyBgColor: @lightGrey;
-    @bodyColor: @black;
-
-// dimensions
-
-    @logoHeight: 75px;
-
-// font sizes
 
     @fontSizeHeaderTitle: 25px;
     @fontSizeHeaderButton: 20px;
@@ -47,7 +26,36 @@
     @fontSizeFormLabel: @fontSizeForm;
     @fontSizeFormInput: @fontSizeForm;
 
-// lists
+// palette
 
-    @itemPadding: 16px;
-    @itemTitleLineHeight: 24px;
+    @blue: #4fc7e2;
+    @lightBlue: mix(@blue, @grey, 10%);
+    @darkBlue: #46a2b6;
+    @white: #f6f6f7;
+    @lightGrey: mix(@black, #fff, 10%);
+    @grey: mix(@black, #fff, 50%);
+    @black: mix(#000, #fff, 60%);
+
+// colors
+
+    // fonts
+
+        @bodyColor: @black;
+        @buttonColor: @white;
+        @linkColor: @blue;
+
+    // backgrounds
+
+        @headerBgColor: @white;
+        @bodyBgColor: @lightGrey;
+        @buttonBgColor: @blue;
+        @itemBgColor: #fff;
+
+// dimensions
+
+    @logoHeight: 75px;
+
+    // lists
+
+        @itemPadding: 16px;
+        @itemTitleLineHeight: 24px;

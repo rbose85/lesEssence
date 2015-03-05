@@ -1,5 +1,35 @@
 .slider{
-    background: url(../img/drip-blue.svg) no-repeat 50% 0 transparent;
-    height: 250px;
-    background-size: auto 250px;
+    @dripAspectRatio: (384 / 530);
+    @dripHeight: 365px;
+    @dripWidth: (@dripHeight * @dripAspectRatio);
+    @dripFontColor: @white;
+    background: url(../img/drip-blue.svg) no-repeat 0 50% transparent;
+    height: 100%;
+    background-size: contain;
+    color: @dripFontColor;
+    text-align: center;
+
+    &-slide > div{
+        @contentGetter: 30px;
+        @contentWidth: (@dripWidth - (@contentGetter * 2));
+        position: absolute;
+        width: @contentWidth;
+        margin-left: -(@contentWidth / 2);
+        left: 50%;
+        top: 50%;
+        margin-top: -20px;
+    }
+
+    h1{
+        font-size: 16px;
+        font-weight: bold;
+        color: inherit;
+        letter-spacing: normal
+    }
+
+    p{
+        font-size: 52px;
+        border: solid fadeout(@white, 75%);
+        border-width: 1px 0;
+    }
 }
