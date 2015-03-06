@@ -5,10 +5,13 @@
     var concat = require('gulp-concat');
     var del = require('del');
     var flatten = require('gulp-flatten');
+    var fs = require('fs');
     var inject = require('gulp-inject');
     var jshint = require('gulp-jshint');
     var karma = require('karma');
     var less = require('gulp-less');
+    var merge = require('merge-stream');
+    var sass = require('gulp-sass');
     var sort = require('gulp-angular-filesort');
     var sourcemaps = require('gulp-sourcemaps');
     var util = require('gulp-util');
@@ -27,8 +30,15 @@
     });
 
     gulp.task('css-vendor', function () {
-        return gulp.src(wiredep().css)
-            .pipe(gulp.dest('www/css/'));
+        var tasks = fs.readdirSync('scss/')
+            .map(function (file) {
+                return gulp.src('scss/' + file)
+                    .pipe(sourcemaps.init())
+                    .pipe(sass())
+                    .pipe(sourcemaps.write({sourceRoot: '/src'}))
+                    .pipe(gulp.dest('www/css/'));
+            });
+        return merge(tasks);
     });
 
     gulp.task('css', ['css-app', 'css-vendor']);
