@@ -1,22 +1,24 @@
 <ion-view view-title="Home">
     <ion-content padding="true" scroll="false">
-        <div class="card">
-            <div class="item item-divider">
-                Average MPG
-            </div>
-            <div class="item item-text-wrap stats-value">{{ vm.averageMPG | number }}</div>
-        </div>
-        <div class="card">
-            <div class="item item-divider">
-                Average Price (Pounds per Litre)
-            </div>
-            <div class="item item-text-wrap stats-value">{{ vm.averagePPL | currency:"£" }}</div>
-        </div>
-        <div class="card">
-            <div class="item item-divider">
-                Average Price per Tank
-            </div>
-            <div class="item item-text-wrap stats-value">{{ vm.averageTank | currency:"£" }}</div>
-        </div>
+        <ion-slide-box on-slide-changed="slideHasChanged($index)">
+            <ion-slide>
+                <div class="slider-content">
+                    <h1>Average MPG</h1>
+                    <p>{{ vm.averageMPG | number }}</p>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="slider-content">
+                    <h1>Average Price <br> (&pound; per Litre)</h1>
+                    <p>{{ vm.averagePPL | currency:"£" }}</p>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="slider-content">
+                    <h1>Average Price per Tank</h1>
+                    <p>{{ vm.averageTank | currency:"£" }}</p>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
     </ion-content>
 </ion-view>
