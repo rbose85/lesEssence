@@ -2,33 +2,14 @@
 
     @fontDir: ~"../fonts";
     @fontFallback: "Helvetica Neue", "Roboto", sans-serif;
-    @quicksand: "quicksandbook", @fontFallback;
-    @quicksandBold: "quicksandbold", @fontFallback;
+    @quicksand: "quicksand", @fontFallback;
 
     @bodyFont: @quicksand;
-    @bodyFontBold: @quicksandBold;
+
+// font sizes
 
     @bodySize: 23px;
     @bodySizeSmall: 16px;
-
-// colors
-
-    @blue: #4fc7e2;
-    @lightBlue: mix(@blue, @grey, 10%);
-    @darkBlue: #46a2b6;
-
-    @lightGrey: #f6f6f7;
-    @grey: mix(@black, #fff, 50%);
-    @black: mix(#000, #fff, 60%);
-
-    @headerBgColor: @lightGrey;
-    @bodyBgColor: @grey;
-
-// dimensions
-
-    @logoHeight: 75px;
-
-// font sizes
 
     @fontSizeHeaderTitle: 25px;
     @fontSizeHeaderButton: 20px;
@@ -45,7 +26,48 @@
     @fontSizeFormLabel: @fontSizeForm;
     @fontSizeFormInput: @fontSizeForm;
 
-// lists
+// palette
 
-    @itemPadding: 16px;
-    @itemTitleLineHeight: 24px;
+    @blue: #4fc7e2;
+    @lightBlue: mix(@blue, @grey, 10%);
+    @darkBlue: #46a2b6;
+    @white: #f6f6f7;
+    @lightGrey: mix(@black, #fff, 10%);
+    @grey: mix(@black, #fff, 50%);
+    @black: mix(#000, #fff, 60%);
+
+// colors
+
+    // fonts
+
+        @bodyColor: @black;
+        @buttonColor: @white;
+        @linkColor: @blue;
+
+    // backgrounds
+
+        @headerBgColor: @white;
+        @bodyBgColor: @lightGrey;
+        @buttonBgColor: @blue;
+        @itemBgColor: #fff;
+
+// dimensions
+
+    @logoHeight: 75px;
+
+    // lists
+
+        @itemPadding: 16px;
+        @itemTitleLineHeight: 24px;
+
+// media queries
+
+    @widthIphone4: 320px;
+    @widthIphone5: 320px;
+    @widthIphone6: 375px;
+    @widthIphone6Plus: 414px;
+
+    @mediaIphone4: ~"only screen and (max-width: 640px)";
+    @mediaIphone5: @mediaIphone4;
+    @mediaIphone6: ~"only screen and (max-width: 750px)";
+    @mediaIphone6Plus: ~"only screen and (max-width: 1080px)";

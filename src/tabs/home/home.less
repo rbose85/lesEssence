@@ -1,4 +1,88 @@
-.stats-value {
+.slider{
+    @dripAspectRatio: (384 / 530);
+    @dripHeight: 365px;
+    @dripWidth: (@dripHeight * @dripAspectRatio);
+    @dripFontColor: @white;
+    background: url(../img/drip-blue.svg) no-repeat 50% 50% transparent;
+    background-size: contain;
+    color: @dripFontColor;
     text-align: center;
-    font-size: larger;
+    height: 100%;
+
+    &-slide{
+    }
+
+    &-content{
+        @contentGetter: 30px;
+        @contentWidth: (@dripWidth - (@contentGetter * 2));
+        position: absolute;
+        left: 50%;
+        bottom: 25%;
+        margin-left: -35%;
+        width: 70%;
+    }
+
+    h1{
+        font-size: 0.696em;
+        font-weight: bold;
+        color: inherit;
+        letter-spacing: normal
+    }
+
+    p{
+        font-size: 2.261em;
+        border: solid fadeout(@white, 75%);
+        border-width: 1px 0;
+        margin: 0;
+        line-height: 1em;
+        white-space: nowrap;
+    }
+
+    @media @mediaIphone5{
+        @padding: 20px;
+
+        &-content{
+            font-size: 30px;
+        }
+
+        h1{
+            margin-bottom: @padding
+        }
+
+        p{
+            padding: @padding 0;
+        }
+    }
+
+    @media @mediaIphone6{
+        @padding: 20px;
+
+        &-content{
+            font-size: 30px;
+        }
+
+        h1{
+            margin-bottom: @padding
+        }
+
+        p{
+            padding: @padding 0;
+        }
+    }
+
+    @media @mediaIphone6Plus{
+        @padding: 20px;
+
+        &-content{
+            font-size: 37px;
+        }
+
+        h1{
+            margin-bottom: @padding
+        }
+
+        p{
+            padding: @padding 0;
+        }
+    }
 }
