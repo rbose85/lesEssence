@@ -4,20 +4,35 @@
     angular.module('app')
         .constant('VERSION', '0.1')
         .constant('FBURL', 'https://lesessence.firebaseio.com')
-        .run(Initialisation);
+        .run(InitKeyboard)
+        .run(InitStatusbar)
+        .run(InitUiRouter);
 
     /* @ngInject */
-    function Initialisation($rootScope, $ionicPlatform, keyboard) {
-
+    function InitKeyboard($ionicPlatform, keyboard) {
         var initKeyboard = function () {
             keyboard.disableScroll();
             keyboard.hideAccessoryBar();
         };
 
+        $ionicPlatform.ready(function () {
+            initKeyboard();
+        });
+    }
+
+    /* @ngInject */
+    function InitStatusbar($ionicPlatform, statusbar) {
         var initStatusBar = function () {
-            ionic.Platform.showStatusBar(true);
+            statusbar.show(true);
         };
 
+        $ionicPlatform.ready(function () {
+            initStatusBar();
+        });
+    }
+
+    /* @ngInject */
+    function InitUiRouter($ionicPlatform, $rootScope, $state, $stateParams) {
         var err = function (event, to, toParams, from, fromParams, error) {
             console.error(angular.toJson(error, true));
         };
@@ -26,12 +41,16 @@
             console.error('State Unknown', angular.toJson(unfoundState, true));
         };
 
-        $ionicPlatform.ready(function () {
-            initKeyboard();
-            initStatusBar();
-
+        var initUiRouter = function () {
             $rootScope.$on('$stateChangeError', err);
             $rootScope.$on('$stateNotFound', unknown);
+
+            $rootScope.$state = $state;
+            $rootScope.$stateParams = $stateParams;
+        };
+
+        $ionicPlatform.ready(function () {
+            initUiRouter();
         });
     }
 
