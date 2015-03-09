@@ -52,8 +52,7 @@
      * */
     gulp.task('fonts', function () {
         return gulp.src([
-            'bower_components/ionic/fonts/**/*.{eot,svg,ttf,woff,woff2}',
-            'bower_components/font-awesome/fonts/**/*.{eot,svg,ttf,woff,woff2}',
+            'bower_components/**/*.{eot,svg,ttf,woff,woff2}',
             'resources/fonts/**/*.{ttf,woff,eot,svg}'
         ])
             .pipe(flatten())
