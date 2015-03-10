@@ -21,10 +21,7 @@
      *  Group task(s) to output folder: www/css
      * */
     gulp.task('css-app', function () {
-        return gulp.src([
-            'src-less/app.less',
-            'src-less/**/*.less'
-        ])
+        return gulp.src('src-less/les.less')
             .pipe(sourcemaps.init())
             .pipe(concat('app.css'))
             .pipe(less())
