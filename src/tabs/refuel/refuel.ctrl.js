@@ -5,8 +5,11 @@
         .controller('TabsRefuelController', TabsRefuelCtrl);
 
     /* @ngInject */
-    function TabsRefuelCtrl(keyboard, redirect, spinner, tank) {
+    function TabsRefuelCtrl(keyboard, platform, redirect, spinner, tank) {
         var vm = this;
+
+        vm.isIOS = platform.isIOS();
+        vm.isAndroid = platform.isAndroid();
 
         vm.volume = '';
         vm.price = '';
