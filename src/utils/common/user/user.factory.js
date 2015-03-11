@@ -5,15 +5,14 @@
         .factory('user', UserService);
 
     /* @ngInject */
-    function UserService($firebase, FBURL, account, session) {
-        var getSync = function (userId) {
+    function UserService(FBURL, account, session) {
+        var getRef = function (userId) {
             if (!userId) {
-                console.error('UserService getSync(userId)');
+                console.error('UserService getRef(userId)');
             }
 
             var url = FBURL + '/users/' + userId + '/';
-            var ref = new Firebase(url);
-            return $firebase(ref);
+            return new Firebase(url);
         };
 
         var createUser = function (name, email, password) {
@@ -22,8 +21,8 @@
                     return session.create(email, password);
                 })
                 .then(function (sessionData) {
-                    return getSync(sessionData.id)
-                        .$set({details: {name: name}});
+                    return getRef(sessionData.id)
+                        .set({details: {name: name}});
                 });
         };
 

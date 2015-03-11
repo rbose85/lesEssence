@@ -7,8 +7,7 @@
     /* @ngInject */
     function AuthenticationService($firebaseAuth, FBURL) {
         var ref = new Firebase(FBURL);
-        var url = ref.root();
-        var manager = $firebaseAuth(url);
+        var manager = $firebaseAuth(ref);
 
         return {
             getManager: function () {
