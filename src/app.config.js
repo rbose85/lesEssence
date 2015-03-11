@@ -34,7 +34,7 @@
     /* @ngInject */
     function InitUiRouter($ionicPlatform, $rootScope, $state, $stateParams) {
         var err = function (event, to, toParams, from, fromParams, error) {
-            console.error(angular.toJson(error, true));
+            console.error(angular.toJson(error.message || error, true));
         };
 
         var unknown = function (event, unfoundState) {
