@@ -5,17 +5,17 @@
         .factory('tank', TankService);
 
     /* @ngInject */
-    function TankService($firebase, FBURL, user) {
+    function TankService($firebaseArray, FBURL, user) {
         var url = FBURL + '/users/' + user.getId() + '/tanks/';
         var ref = new Firebase(url);
-        var sync = $firebase(ref);
+        var list = $firebaseArray(ref);
 
         return {
             add: function (tankData) {
-                return sync.$push(tankData);
+                return list.$add(tankData);
             },
             all: function () {
-                return sync.$asArray();
+                return list;
             }
         };
     }
