@@ -5,8 +5,11 @@
         .controller('FoyerSigninController', FoyerSigninCtrl);
 
     /* @ngInject */
-    function FoyerSigninCtrl(keyboard, redirect, spinner, user) {
+    function FoyerSigninCtrl(keyboard, platform, redirect, spinner, user) {
         var vm = this;
+
+        vm.isIOS = platform.isIOS();
+        vm.isAndroid = platform.isAndroid();
 
         vm.email = '';
         vm.password = '';

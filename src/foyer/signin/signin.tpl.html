@@ -1,6 +1,10 @@
 <ion-view view-title="Sign In">
     <ion-nav-buttons side="secondary">
-        <button class="button button-icon" ng-click="vm.submit()" ng-disabled="vm.signinForm.$invalid">Sign In</button>
+        <button class="button button-icon"
+                ng-click="vm.submit()"
+                ng-disabled="vm.signinForm.$invalid"
+                ng-if="vm.isIOS">Sign In
+        </button>
     </ion-nav-buttons>
     <ion-content padding="true" scroll="false">
         <div class="logo logo-horz">

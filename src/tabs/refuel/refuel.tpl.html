@@ -1,6 +1,9 @@
-<ion-view view-title="At the Pumps ?">
+<ion-view view-title="At the Pumps?">
     <ion-nav-buttons side="secondary">
-        <button class="button button-icon" ng-click="vm.submit()" ng-disabled="vm.refuelForm.$invalid">Done</button>
+        <button class="button button-icon"
+                ng-click="vm.submit()"
+                ng-disabled="vm.refuelForm.$invalid"
+                ng-if="vm.isIOS">Done</button>
     </ion-nav-buttons>
     <ion-content padding="true" scroll="false">
         <p class="padding padding-horizontal text-center form-help-text">
