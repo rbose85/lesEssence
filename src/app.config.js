@@ -23,7 +23,7 @@
     /* @ngInject */
     function InitStatusbar($ionicPlatform, statusbar) {
         var initStatusBar = function () {
-            statusbar.show(true);
+            statusbar.show();
         };
 
         $ionicPlatform.ready(function () {
