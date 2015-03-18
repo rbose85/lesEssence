@@ -1,17 +1,15 @@
-    // @import 'common/functions.less';
-
-// variables
-
-    //@import 'common/variables.less';
-
-// font
-
-    // @import 'common/fonts.less';
-
 // base
 
     body, input, button, select, textarea{
         color: @bodyColor;
+        font-family: @bodyFont;
+        font-size: @bodySize;
+        letter-spacing: -0.09em;
+    }
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+        font-family: @bodyFont;
+        color: @black
     }
 
     textarea, input[type="text"], input[type="password"],
@@ -20,10 +18,8 @@
     input[type="number"], input[type="email"], input[type="url"],
     input[type="search"], input[type="tel"], input[type="color"]{
         color: @bodyColor;
-    }
-
-    .input-label {
-        color: #000;
+        font-size: @bodySize;
+        line-height: 22px;
     }
 
     input, textarea{&::-webkit-input-placeholder{#placeholder}}
@@ -39,30 +35,8 @@
         line-height: 1.200em;
     }
 
-// type
-
-    body, input, button, select, textarea{
-        font-family: @bodyFont;
-        font-size: @bodySize;
-        letter-spacing: -0.09em;
-    }
-
-    textarea, input[type="text"], input[type="password"],
-    input[type="datetime"], input[type="datetime-local"], input[type="date"],
-    input[type="month"], input[type="time"], input[type="week"],
-    input[type="number"], input[type="email"], input[type="url"],
-    input[type="search"], input[type="tel"], input[type="color"]{
-        font-size: @bodySize;
-        line-height: 22px;
-    }
-
-    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
-        font-family: @bodyFont;
-        color: @black
-    }
-
     .button{
-        font-size: @bodySize;
+        font-size: @fontSizeButton;
 
         &-small{
             font-size: @bodySizeSmall;
@@ -71,7 +45,8 @@
 
     .input{
         &-label{
-            font-size: @bodySize;
+            font-size: @fontSizeFormLabel;
+            color: @bodyColor;
         }
     }
 
@@ -127,10 +102,20 @@
                 display: block;
             }
         }
+
+        @media @mediaIphone4 {
+            &.logo-large{
+                font-size: 29px;
+
+                img{
+                    height: 250px;
+                }
+            }
+        }
     }
 
     .pane, .view{
-        background: @bodyBgColor
+        background: @bodyBgColor;
     }
 
     .tab-title{
@@ -164,7 +149,6 @@
             }
         }
     }
-
 
 // buttons
 
@@ -245,4 +229,8 @@
         background-color: transparent;
     }
 
-// Android
+// forms
+
+    .item-divider{
+        background-color: transparent
+    }
