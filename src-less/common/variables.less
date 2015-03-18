@@ -17,6 +17,7 @@
     @fontSizeBlockHeader: 14px;
     @fontSizeTabTitle: 12px;
     @fontSizeButton: 25px;
+    @fontSizeButtonSmall: @bodySizeSmall;
 
     @fontSizeItemTitle: 20px;
     @fontSizeItemContent: 16px;
@@ -25,6 +26,27 @@
     @fontSizeForm: 20px;
     @fontSizeFormLabel: @fontSizeForm;
     @fontSizeFormInput: @fontSizeForm;
+
+    @media @mediaIphone4 {
+        @bodySize: 20px;
+        @bodySizeSmall: 16px;
+
+        @fontSizeHeaderTitle: 25px;
+        @fontSizeHeaderButton: 20px;
+
+        @fontSizeBlockHeader: 14px;
+        @fontSizeTabTitle: 12px;
+        @fontSizeButton: 25px;
+        @fontSizeButtonSmall: @bodySizeSmall;
+
+        @fontSizeItemTitle: 20px;
+        @fontSizeItemContent: 16px;
+        @fontSizeItemMeta: @fontSizeItemContent;
+
+        @fontSizeForm: 20px;
+        @fontSizeFormLabel: @fontSizeForm;
+        @fontSizeFormInput: @fontSizeForm;
+    }
 
 // palette
 
@@ -67,7 +89,7 @@
     @widthIphone6: 375px;
     @widthIphone6Plus: 414px;
 
-    @mediaIphone4: ~"only screen and (max-width: 640px)";
-    @mediaIphone5: @mediaIphone4;
-    @mediaIphone6: ~"only screen and (max-width: 750px)";
-    @mediaIphone6Plus: ~"only screen and (max-width: 1080px)";
+    @mediaIphone4:     ~"@media only screen and (min-width: 320px)";
+    @mediaIphone5:     ~"@media only screen and (min-width: 320px)";
+    @mediaIphone6:     ~"@media only screen and (min-width: 375px)";
+    @mediaIphone6Plus: ~"@media only screen and (min-width: 414px)";
