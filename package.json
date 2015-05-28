@@ -6,6 +6,9 @@
     "url": "https://github.com/rbose85/lesEssence"
   },
   "description": "lesEssence: Predict your fuel economy.",
+  "engines": {
+    "node": ">=0.12.3"
+  },
   "dependencies": {
     "del": "^1.1.1",
     "elementtree": "^0.1.6",
