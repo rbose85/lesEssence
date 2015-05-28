@@ -3,9 +3,9 @@
 
 # auto-generated folders
 bower_components/
+node_modules/
 platforms/
 plugins/
-node_modules/
 
 # auto-generated www folders
 www/css/
