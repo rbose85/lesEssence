@@ -5,10 +5,8 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <!-- bower:css -->
-    <!-- endbower -->
-    <link rel="stylesheet" href="css/app.css">
-
+    <!-- inject:css -->
+    <!-- endinject -->
 </head>
 <body ng-app="app" ng-class="$state.current.name | dashcase">
 
@@ -17,15 +15,13 @@
 </ion-nav-bar>
 <ion-nav-view></ion-nav-view>
 
-<!-- bower:js -->
-<!-- endbower -->
+<!-- inject:lib:js -->
+<!-- endinject -->
 
 <!-- cordova script (this will be a 404 during development) -->
 <script src="cordova.js"></script>
-<script src="js/templates.js"></script>
 
-<!-- inject:js -->
+<!-- inject:app:js -->
 <!-- endinject -->
-
 </body>
 </html>
