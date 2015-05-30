@@ -1,5 +1,9 @@
-// The path for our ionicons font files, relative to the built CSS in www/css
-$fa-font-path: "../fonts" !default;
+/*
+To customize the look and feel of Font Awesome.
+*/
 
-// Include all of Ionic
-@import "../bower_components/font-awesome/scss/font-awesome";
+// The path for the font files, relative to the built CSS in www/css
+$fa-font-path: '../fonts' !default;
+
+// Include all of Font Awesome
+@import 'vendor/font-awesome/font-awesome';
