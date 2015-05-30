@@ -9,8 +9,4 @@ platforms/
 plugins/
 
 # auto-generated www folders
-www/css/
-www/fonts/
-www/img/
-www/js/
-www/lib/
+www/
