@@ -11,7 +11,7 @@
                 url: '/refuel',
                 views: {
                     'refuel-tab@tabs': {
-                        templateUrl: 'js/tabs/refuel/refuel.tpl.html',
+                        templateUrl: 'tabs/refuel/refuel.tpl.html',
                         controller: 'TabsRefuelController as vm'
                     }
                 }

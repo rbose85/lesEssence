@@ -10,7 +10,7 @@
             .state('tabs', {
                 url: '/tabs',
                 abstract: true,
-                templateUrl: 'js/tabs/tabs.tpl.html'
+                templateUrl: 'tabs/tabs.tpl.html'
             });
     }
 

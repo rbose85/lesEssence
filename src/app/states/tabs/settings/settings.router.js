@@ -15,7 +15,7 @@
                 url: '/account',
                 views: {
                     'settings-tab@tabs': {
-                        templateUrl: 'js/tabs/settings/account/account.tpl.html'
+                        templateUrl: 'tabs/settings/account/account.tpl.html'
                     }
                 }
             })
@@ -23,7 +23,7 @@
                 url: '/contact',
                 views: {
                     'settings-tab@tabs': {
-                        templateUrl: 'js/tabs/settings/contact/contact.tpl.html'
+                        templateUrl: 'tabs/settings/contact/contact.tpl.html'
                     }
                 }
             })
@@ -31,7 +31,7 @@
                 url: '/help',
                 views: {
                     'settings-tab@tabs': {
-                        templateUrl: 'js/tabs/settings/help/help.tpl.html'
+                        templateUrl: 'tabs/settings/help/help.tpl.html'
                     }
                 }
             })
@@ -39,7 +39,7 @@
                 url: '',
                 views: {
                     'settings-tab@tabs': {
-                        templateUrl: 'js/tabs/settings/menu/menu.tpl.html',
+                        templateUrl: 'tabs/settings/menu/menu.tpl.html',
                         controller: 'TabsSettingsMenuController as vm'
                     }
                 }
@@ -48,7 +48,7 @@
                 url: '/options',
                 views: {
                     'settings-tab@tabs': {
-                        templateUrl: 'js/tabs/settings/options/options.tpl.html'
+                        templateUrl: 'tabs/settings/options/options.tpl.html'
                     }
                 }
             });
