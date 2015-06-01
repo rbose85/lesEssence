@@ -29,13 +29,6 @@
     "plist": "^1.1.0",
     "wiredep": "^2.2.2"
   },
-  "cordovaPlugins": [
-    "com.ionic.keyboard",
-    "org.apache.cordova.console",
-    "org.apache.cordova.device",
-    "org.apache.cordova.splashscreen",
-    "org.apache.cordova.statusbar"
-  ],
   "devDependencies": {
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.7",
