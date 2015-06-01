@@ -23,7 +23,7 @@
                 },
                 views: {
                     'logbook-tab@tabs': {
-                        templateUrl: 'js/tabs/logbook/list/list.tpl.html',
+                        templateUrl: 'tabs/logbook/list/list.tpl.html',
                         controller: 'TabsLogbookListController as vm'
                     }
                 }
@@ -32,7 +32,7 @@
                 url: '/details/{tankId:-[\w-]{19}}',
                 views: {
                     'logbook-tab@tabs': {
-                        templateUrl: 'js/tabs/logbook/details/details.tpl.html'
+                        templateUrl: 'tabs/logbook/details/details.tpl.html'
                     }
                 }
             })
@@ -40,7 +40,7 @@
                 url: '/edit/{tankId:-[\w-]{19}}',
                 views: {
                     'logbook-tab@tabs': {
-                        templateUrl: 'js/tabs/logbook/edit/edit.tpl.html'
+                        templateUrl: 'tabs/logbook/edit/edit.tpl.html'
                     }
                 }
             });

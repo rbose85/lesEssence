@@ -19,7 +19,7 @@
                 },
                 views: {
                     'home-tab': {
-                        templateUrl: 'js/tabs/home/home.tpl.html',
+                        templateUrl: 'tabs/home/home.tpl.html',
                         controller: 'TabsHomeController as vm'
                     }
                 }
