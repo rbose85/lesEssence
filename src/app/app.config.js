@@ -32,7 +32,7 @@
     }
 
     /* @ngInject */
-    function InitUiRouter($ionicPlatform, $rootScope, $state, $stateParams) {
+    function InitUiRouter($ionicPlatform, $rootScope) {
         var err = function (event, to, toParams, from, fromParams, error) {
             console.error(angular.toJson(error.message || error, true));
         };
@@ -44,9 +44,6 @@
         var initUiRouter = function () {
             $rootScope.$on('$stateChangeError', err);
             $rootScope.$on('$stateNotFound', unknown);
-
-            $rootScope.$state = $state;
-            $rootScope.$stateParams = $stateParams;
         };
 
         $ionicPlatform.ready(function () {
