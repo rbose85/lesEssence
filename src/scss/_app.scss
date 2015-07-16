@@ -1,15 +1,15 @@
 // base
 
     body, input, button, select, textarea{
-        color: @bodyColor;
-        font-family: @bodyFont;
-        font-size: @bodySize;
+        color: $bodyColor;
+        font-family: $bodyFont;
+        font-size: $bodySize;
         letter-spacing: -0.09em;
     }
 
     h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
-        font-family: @bodyFont;
-        color: @black
+        font-family: $bodyFont;
+        color: $black
     }
 
     textarea, input[type="text"], input[type="password"],
@@ -17,17 +17,37 @@
     input[type="month"], input[type="time"], input[type="week"],
     input[type="number"], input[type="email"], input[type="url"],
     input[type="search"], input[type="tel"], input[type="color"]{
-        color: @bodyColor;
-        font-size: @bodySize;
+        color: $bodyColor;
+        font-size: $bodySize;
         line-height: 22px;
     }
 
-    input, textarea{&::-webkit-input-placeholder{#placeholder}}
-    input, textarea{&:-moz-placeholder{#placeholder}}
-    input, textarea{&::-moz-placeholder{#placeholder}}
-    input, textarea{&:-ms-input-placeholder{#placeholder}}
+    input, textarea{
+        &::-webkit-input-placeholder{
+            @include placeholder;
+        }
+    }
 
-    #placeholder{
+    input, textarea{
+        &:-moz-placeholder{
+            @include placeholder;
+        }
+    }
+
+    input, textarea{
+        &::-moz-placeholder{
+            @include placeholder;
+        }
+    }
+
+    input, textarea{
+        &:-ms-input-placeholder{
+            @include placeholder;
+        }
+    }
+
+
+    @mixin placeholder{
         color: mix(#000,#fff,25%);
     }
 
@@ -36,17 +56,17 @@
     }
 
     .button{
-        font-size: @fontSizeButton;
+        font-size: $fontSizeButton;
 
         &-small{
-            font-size: @bodySizeSmall;
+            font-size: $bodySizeSmall;
         }
     }
 
     .input{
         &-label{
-            font-size: @fontSizeFormLabel;
-            color: @bodyColor;
+            font-size: $fontSizeFormLabel;
+            color: $bodyColor;
         }
     }
 
@@ -70,11 +90,11 @@
 
         &.logo-horz{
             margin: 20px 0 40px;
-            height: @logoHeight;
+            height: $logoHeight;
             color: #fff;
 
             img{
-                height: @logoHeight;
+                height: $logoHeight;
                 display: inline-block;
                 vertical-align: -15px;
             }
@@ -85,7 +105,7 @@
         }
 
         &.logo-large{
-            color: @bodyColor;
+            color: $bodyColor;
             position: relative;
             font-size: 35px;
             padding: 20px 0;
@@ -103,7 +123,7 @@
             }
         }
 
-        @media @mediaIphone4 {
+        @media #{$mediaIphone4} {
             &.logo-large{
                 font-size: 29px;
 
@@ -115,24 +135,24 @@
     }
 
     .pane, .view{
-        background: @bodyBgColor;
+        background: $bodyBgColor;
     }
 
     .tab-title{
-        font-size: @fontSizeTabTitle;
+        font-size: $fontSizeTabTitle;
         letter-spacing: normal;
     }
 
     .bar{
-        border-bottom-color: @grey;
-        color: @bodyColor;
+        border-bottom-color: $grey;
+        color: $bodyColor;
 
         &-header{
-            background: @headerBgColor !important;
+            background: $headerBgColor !important;
         }
 
         .button{
-            color: @linkColor;
+            color: $linkColor;
             background-color: transparent;
             border-color: transparent;
 
@@ -142,10 +162,10 @@
         }
 
         .title{
-            font-size: @fontSizeHeaderTitle;
+            font-size: $fontSizeHeaderTitle;
 
             .platform-android &{
-                font-size: @fontSizeHeaderTitle
+                font-size: $fontSizeHeaderTitle
             }
         }
     }
@@ -153,9 +173,9 @@
 // buttons
 
     .button{
-        border-color: @buttonBgColor;
-        background-color: @buttonBgColor;
-        color: @buttonColor;
+        border-color: $buttonBgColor;
+        background-color: $buttonBgColor;
+        color: $buttonColor;
 
         &.button-assertive{
 
@@ -173,29 +193,29 @@
 // lists
 
     .item{
-        font-size: @fontSizeItemTitle;
-        color: @bodyColor;
-        background-color: @itemBgColor;
+        font-size: $fontSizeItemTitle;
+        color: $bodyColor;
+        background-color: $itemBgColor;
 
         h2{
             font-size: inherit;
         }
 
         p{
-            font-size: @fontSizeItemContent;
-            color: @grey;
+            font-size: $fontSizeItemContent;
+            color: $grey;
         }
 
         time{
             position: absolute;
-            top: @itemPadding;
-            right: @itemPadding;
-            line-height: @itemTitleLineHeight;
+            top: $itemPadding;
+            right: $itemPadding;
+            line-height: $itemTitleLineHeight;
             display: block;
         }
 
         .icon{
-            color: @grey;
+            color: $grey;
             font-size: inherit;
         }
     }
@@ -207,8 +227,8 @@
                     &-active,
                     &.active,
                     &.activated{
-                        border-color: @blue;
-                        color: @blue;
+                        border-color: $blue;
+                        color: $blue;
                     }
                 }
             }
@@ -220,7 +240,7 @@
             &.tab-item-active,
             &.active,
             &.activated{
-                color: @blue
+                color: $blue
             }
         }
     }
