@@ -20,13 +20,30 @@
     /*
      *  Group task(s) to output folder: www/css
      * */
+    // gulp.task('css-app', function () {
+    //     return gulp.src('src-less/les.less')
+    //         .pipe(sourcemaps.init())
+    //         .pipe(concat('app.css'))
+    //         .pipe(less())
+    //         .pipe(sourcemaps.write({sourceRoot: '/src-less'}))
+    //         .pipe(gulp.dest('www/css/'));
+    // });
+
     gulp.task('css-app', function () {
-        return gulp.src('src-less/les.less')
+        var opts = {
+            outputStyle: 'expanded',
+            sourceComments: 'none',
+            includePaths : 'src/sass',
+            debug_info: true,
+            errLogToConsole: true
+        };
+
+        return gulp.src('src/scss/les.scss')
             .pipe(sourcemaps.init())
             .pipe(concat('app.css'))
-            .pipe(less())
-            .pipe(sourcemaps.write({sourceRoot: '/src-less'}))
-            .pipe(gulp.dest('www/css/'));
+            .pipe(sass(opts))
+            .pipe(sourcemaps.write({sourceRoot: './maps'}))
+            .pipe(gulp.dest('www/css'));
     });
 
     gulp.task('css-vendor', function () {
@@ -173,7 +190,7 @@
 
 
     gulp.task('watch', function () {
-        gulp.watch('src-less/**/*.less', ['css-app']);
+        gulp.watch('src/**/*.scss', ['css-app']);
         gulp.watch(['src/**/*.js', '!src/**/*.spec.js'],
             ['js-app', 'index-app']);
         gulp.watch('src/**/*.html', ['templates']);

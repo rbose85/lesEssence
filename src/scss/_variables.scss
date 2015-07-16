@@ -1,0 +1,106 @@
+// Bourbon overrides
+
+    $em-base: 16;
+    $prefix-for-webkit:    true;
+    $prefix-for-mozilla:   true;
+    $prefix-for-microsoft: true;
+    $prefix-for-opera:     true;
+    $prefix-for-spec:      true;
+
+// fonts
+
+    $fontDir: "../fonts";
+    $fontFallback: "Helvetica Neue", "Roboto", sans-serif;
+    $quicksand: "quicksand", $fontFallback;
+
+    $bodyFont: $quicksand;
+
+// font sizes
+
+    $bodySize: 23px;
+    $bodySizeSmall: 16px;
+
+    $fontSizeHeaderTitle: 25px;
+    $fontSizeHeaderButton: 20px;
+
+    $fontSizeBlockHeader: 14px;
+    $fontSizeTabTitle: 12px;
+    $fontSizeButton: 25px;
+    $fontSizeButtonSmall: $bodySizeSmall;
+
+    $fontSizeItemTitle: 20px;
+    $fontSizeItemContent: 16px;
+    $fontSizeItemMeta: $fontSizeItemContent;
+
+    $fontSizeForm: 20px;
+    $fontSizeFormLabel: $fontSizeForm;
+    $fontSizeFormInput: $fontSizeForm;
+
+    // $media #{$mediaIphone4} {
+    //     $bodySize: 20px;
+    //     $bodySizeSmall: 16px;
+
+    //     $fontSizeHeaderTitle: 25px;
+    //     $fontSizeHeaderButton: 20px;
+
+    //     $fontSizeBlockHeader: 14px;
+    //     $fontSizeTabTitle: 12px;
+    //     $fontSizeButton: 25px;
+    //     $fontSizeButtonSmall: $bodySizeSmall;
+
+    //     $fontSizeItemTitle: 20px;
+    //     $fontSizeItemContent: 16px;
+    //     $fontSizeItemMeta: $fontSizeItemContent;
+
+    //     $fontSizeForm: 20px;
+    //     $fontSizeFormLabel: $fontSizeForm;
+    //     $fontSizeFormInput: $fontSizeForm;
+    // }
+
+// palette
+
+    $blue: #4fc7e2;
+    $darkBlue: #46a2b6;
+    $white: #f6f6f7;
+    $black: mix(#000, #fff, 60%);
+    $lightGrey: mix($black, #fff, 10%);
+    $grey: mix($black, #fff, 50%);
+    $lightBlue: mix($blue, $grey, 10%);
+
+// colors
+
+    // fonts
+
+        $bodyColor: $black;
+        $buttonColor: $white;
+        $linkColor: $blue;
+
+    // backgrounds
+
+        $headerBgColor: $white;
+        $bodyBgColor: $lightGrey;
+        $buttonBgColor: $blue;
+        $itemBgColor: #fff;
+
+// dimensions
+
+    $logoHeight: 75px;
+
+    // lists
+
+        $itemPadding: 16px;
+        $itemTitleLineHeight: 24px;
+
+// media queries
+
+    $widthIphone4: 320px;
+    $widthIphone5: 320px;
+    $widthIphone6: 375px;
+    $widthIphone6Plus: 414px;
+
+    $media: ;
+
+    $mediaIphone4:     "#{$media} only screen and (min-width: 320px)";
+    $mediaIphone5:     "#{$media} only screen and (min-width: 320px)";
+    $mediaIphone6:     "#{$media} only screen and (min-width: 375px)";
+    $mediaIphone6Plus: "#{$media} only screen and (min-width: 414px)";

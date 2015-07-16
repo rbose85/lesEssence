@@ -1,10 +1,10 @@
 .slider{
-    @dripAspectRatio: (384 / 530);
-    @dripHeight: 215px;
-    @dripWidth: (@dripHeight * @dripAspectRatio);
-    @dripFontColor: @white;
-    @textSpacingVert: 10px;
-    color: @dripFontColor;
+    $dripAspectRatio: (384 / 530);
+    $dripHeight: 215px;
+    $dripWidth: ($dripHeight * $dripAspectRatio);
+    $dripFontColor: $white;
+    $textSpacingVert: 10px;
+    color: $dripFontColor;
     text-align: center;
     height: 100%;
     padding-bottom: 40px;
@@ -15,14 +15,14 @@
     }
 
     &-content{
-        @contentGutter: 30px;
-        @contentWidth: (@dripWidth - (@contentGutter * 2));
-        @contentWidth: 60%;
+        $contentGutter: 30px;
+        $contentWidth: ($dripWidth - ($contentGutter * 2));
+        $contentWidth: 60%;
         position: absolute;
         left: 50%;
         bottom: 25%;
-        width: @contentWidth;
-        margin-left: -(@contentWidth / 2);
+        width: $contentWidth;
+        margin-left: -($contentWidth / 2);
     }
 
     h1{
@@ -30,39 +30,39 @@
         font-weight: bold;
         color: inherit;
         letter-spacing: normal;
-        margin-bottom: @textSpacingVert;
+        margin-bottom: $textSpacingVert;
     }
 
     p{
         font-size: 2.087em;
-        border: solid fadeout(@white, 75%);
+        border: solid fadeout($white, 75%);
         border-width: 1px 0;
         margin: 0;
         line-height: 1em;
         white-space: nowrap;
         overflow: hidden;
-        padding: @textSpacingVert 0;
+        padding: $textSpacingVert 0;
     }
 
-    @media @mediaIphone4{
+    @media #{$mediaIphone4} {
         &-content{
-            background: #fff !important;
+            //background: #fff !important;
         }
     }
 
-    @media @mediaIphone5{
+    @media #{$mediaIphone5} {
         &-content{
             font-size: 28px
         }
     }
 
-    @media @mediaIphone6{
+    @media #{$mediaIphone6} {
         &-content{
             font-size: 30px;
         }
     }
 
-    @media @mediaIphone6Plus{
+    @media #{$mediaIphone6Plus} {
         &-content{
             font-size: 37px;
         }

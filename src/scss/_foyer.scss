@@ -1,11 +1,11 @@
 body{
     &[data-zone^="foyer"]{
         .pane{
-            #gradient(@background: @blue, @color: @blue, @switch: 0%, @stop: mix(#fff, @blue, 25%));
+            @include linear-gradient($blue, mix(#fff, $blue, 25%));
             color: #fff;
 
             .button-hidden {
-                #sr-only;
+                @include sr-only;
             }
 
             .list-inset{
@@ -13,17 +13,17 @@ body{
             }
 
             .item{
-                border-color: @blue;
+                border-color: $blue;
             }
 
             .button{
                 &.button-positive{
-                    border-color: @darkBlue;
-                    background-color: @darkBlue;
+                    border-color: $darkBlue;
+                    background-color: $darkBlue;
 
                     &.activated{
-                        border-color: darken(@darkBlue, 10%);
-                        background-color: darken(@darkBlue, 10%);
+                        border-color: darken($darkBlue, 10%);
+                        background-color: darken($darkBlue, 10%);
                     }
 
                     &.button-clear{
@@ -37,7 +37,7 @@ body{
 
         .bar{
             border-bottom-color: transparent;
-            color: @white;
+            color: $white;
 
             &-header{
                 background: transparent !important;
