@@ -62,7 +62,6 @@
      ****************************/
 
     gulp.task('bower-scss', function () {
-        util.log(bower('**/*.scss'));
         return gulp.src(bower('**/*.scss'), {base: 'bower_components/'})
             .pipe(rename(function (path) {
                 path.dirname = path.dirname.replace('/scss', '');
@@ -73,6 +72,14 @@
     gulp.task('bower-lib', function () {
         return gulp.src(bower({filter: '**/*.js', env: 'development'}))
             .pipe(gulp.dest('src/.cache/lib/'));
+    });
+
+    gulp.task('clean-cache', function (done) {
+        del(['src/.cache'], done);
+    });
+
+    gulp.task('bowers', ['clean-cache'], function (done) {
+        sequence('bower-scss', 'bower-lib', done);
     });
 
 
