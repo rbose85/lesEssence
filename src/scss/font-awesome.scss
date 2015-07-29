@@ -6,4 +6,4 @@ To customize the look and feel of Font Awesome.
 $fa-font-path: '../fonts' !default;
 
 // Include all of Font Awesome
-@import 'vendor/font-awesome/font-awesome';
+@import '../.cache/scss/font-awesome/font-awesome';

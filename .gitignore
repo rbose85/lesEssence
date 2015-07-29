@@ -9,5 +9,5 @@ platforms/
 plugins/
 
 # auto-generated project folders
-src/scss/vendor/
+src/.cache/
 www/

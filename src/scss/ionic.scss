@@ -19,4 +19,4 @@ $dark:                            #444 !default;
 $ionicons-font-path: '../fonts' !default;
 
 // Include all of Ionic
-@import 'vendor/ionic/ionic';
+@import '../.cache/scss/ionic/ionic';

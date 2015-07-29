@@ -66,7 +66,7 @@
             .pipe(rename(function (path) {
                 path.dirname = path.dirname.replace('/scss', '');
             }))
-            .pipe(gulp.dest('src/scss/vendor/'));
+            .pipe(gulp.dest('src/.cache/scss/'));
     });
 
     //gulp.task('bower-libs', function () {
