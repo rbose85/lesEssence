@@ -23,7 +23,10 @@
     var util = require('gulp-util');
 
 
-    var getBuildType = function developmentOrProduction() {
+    /*********************************************************
+     `BUILD_TYPE` can be either, 'development' or 'production'
+     **********************************************************/
+    var BUILD_TYPE = (function developmentOrProduction() {
         var buildType;
 
         // low weighted option `$ gulp --type production <task>`
@@ -50,12 +53,7 @@
         util.env.type = process.env.NODE_ENV = buildType;
 
         return buildType;
-    };
-
-    /*********************************************************
-     `BUILD_TYPE` can be either, 'development' or 'production'
-     **********************************************************/
-    var BUILD_TYPE = getBuildType();
+    })();
 
 
     /****************************
