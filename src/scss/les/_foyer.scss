@@ -1,0 +1,63 @@
+body{
+    &[data-zone^="foyer"]{
+        .pane{
+            @include linear-gradient($blue, mix(#fff, $blue, 25%));
+            color: #fff;
+
+            .button-hidden {
+                @include sr-only;
+            }
+
+            .list-inset{
+                background: transparent;
+            }
+
+            .item{
+                border-color: $blue;
+            }
+
+            .button{
+                &.button-positive{
+                    border-color: $darkBlue;
+                    background-color: $darkBlue;
+
+                    &.activated{
+                        border-color: darken($darkBlue, 10%);
+                        background-color: darken($darkBlue, 10%);
+                    }
+
+                    &.button-clear{
+                        background: none;
+                        border-color: transparent;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .bar{
+            border-bottom-color: transparent;
+            color: $white;
+
+            &-header{
+                background: transparent !important;
+            }
+
+            .button{
+                color: #fff;
+
+                &.back-button{
+
+                }
+            }
+        }
+    }
+
+    &[data-zone="foyer-welcome"]{
+        .bar{
+            color: transparent;
+        }
+    }
+}
+
+
