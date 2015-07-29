@@ -109,7 +109,7 @@
     });
 
     gulp.task('lib', function () {
-        return gulp.src(bower('**/*.js'))
+        return gulp.src(bower({filter: '**/*.js', env: BUILD_TYPE}))
             .pipe(gulp.dest('www/lib/'));
     });
 
