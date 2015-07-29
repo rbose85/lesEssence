@@ -8,7 +8,7 @@
     <!-- inject:css -->
     <!-- endinject -->
 </head>
-<body ng-app="app" ng-class="$state.current.name | dashcase">
+<body ng-app="app" data-zone="{{ $state.current.name | dashcase }}">
 
 <ion-nav-bar>
     <ion-nav-back-button></ion-nav-back-button>
