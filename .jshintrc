@@ -34,7 +34,7 @@
   "maxerr": false,
   "maxlen": 80,
   "maxparams": 10,
-  "maxstatements": 40,
+  "maxstatements": false,
   "moz": false,
   "multistr": false,
   "newcap": true,
