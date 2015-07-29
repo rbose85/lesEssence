@@ -37,6 +37,6 @@
     "run-sequence": "^1.1.2"
   },
   "scripts": {
-    "postinstall": "bower install && gulp bower-scss"
+    "postinstall": "bower install && gulp bowers"
   }
 }
