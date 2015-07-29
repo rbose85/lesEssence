@@ -4,18 +4,18 @@
             <ion-slide>
                 <div class="slider-content">
                     <h1>Average MPG</h1>
-                    <p>{{ vm.averageMPG | number }}</p>
+                    <p>{{ vm.averageMPG | number:1 }}</p>
                 </div>
             </ion-slide>
             <ion-slide>
                 <div class="slider-content">
-                    <h1>Average Price <br> (&pound; per Litre)</h1>
+                    <h1>Average <br> Price (&pound; per Litre)</h1>
                     <p>{{ vm.averagePPL | currency:"£" }}</p>
                 </div>
             </ion-slide>
             <ion-slide>
                 <div class="slider-content">
-                    <h1>Average Price per Tank</h1>
+                    <h1>Average <br> cost of a tank</h1>
                     <p>{{ vm.averageTank | currency:"£" }}</p>
                 </div>
             </ion-slide>
