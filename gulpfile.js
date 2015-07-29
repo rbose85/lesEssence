@@ -69,10 +69,10 @@
             .pipe(gulp.dest('src/.cache/scss/'));
     });
 
-    //gulp.task('bower-libs', function () {
-    //    return gulp.src(bower({filter: '**/*.js', env: 'development'}))
-    //        .pipe(gulp.dest('src/lib/'));
-    //});
+    gulp.task('bower-lib', function () {
+        return gulp.src(bower({filter: '**/*.js', env: 'development'}))
+            .pipe(gulp.dest('src/.cache/lib/'));
+    });
 
 
     /***************************************
