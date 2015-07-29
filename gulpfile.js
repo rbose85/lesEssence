@@ -6,6 +6,7 @@
     var bower = require('main-bower-files');
     var concat = require('gulp-concat');
     var del = require('del');
+    var flatten = require('gulp-flatten');
     var glob = require('glob');
     var gulp = require('gulp');
     var inject = require('gulp-inject');
@@ -99,8 +100,14 @@
     });
 
     gulp.task('fonts', function () {
-        return gulp.src(bower('**/*.{eot,svg,ttf,woff,woff2}'))
+        var vendors = gulp.src(bower('**/*.{eot,svg,ttf,woff,woff2}'))
             .pipe(gulp.dest('www/fonts/'));
+
+        var customs = gulp.src('resources/fonts/**/*.{eot,svg,ttf,woff,woff2}')
+            .pipe(flatten())
+            .pipe(gulp.dest('www/fonts'));
+
+        return merge(vendors, customs);
     });
 
     gulp.task('img', function () {
