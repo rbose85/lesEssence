@@ -1,12 +1,13 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
-# auto-generated folders
+# auto-generated library folders
 bower_components/
 engine/
 node_modules/
 platforms/
 plugins/
 
-# auto-generated www folders
+# auto-generated project folders
+src/scss/vendor/
 www/
