@@ -5,6 +5,7 @@
     "ionic": "~1.0.1",
     "angularfire": "~1.1.2",
     "ngCordova": "~0.1.17-alpha",
+    "bourbon": "~4.2.3",
     "font-awesome": "~4.4.0"
   },
   "devDependencies": {
@@ -42,6 +43,12 @@
       "main": {
         "development": "dist/angularfire.js",
         "production": "dist/angularfire.min.js"
+      }
+    },
+    "bourbon": {
+      "main": {
+        "development": "app/**/*.scss",
+        "production": "app/**/*.scss"
       }
     },
     "firebase": {
