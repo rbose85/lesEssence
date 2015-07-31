@@ -91,9 +91,5 @@
   "requireSpaceBeforeBlockStatements": true,
   "requireSpacesInConditionalExpression": true,
   "validateIndentation": 4,
-  "validateJSDoc": {
-    "checkParamNames": true,
-    "requireParamTypes": true
-  },
   "validateQuoteMarks": "'"
 }
